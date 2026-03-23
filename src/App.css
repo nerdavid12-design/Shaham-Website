@@ -55,6 +55,18 @@
   background: rgba(255, 255, 255, 0.05);
 }
 
+.nav-icon {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s;
+}
+
+.nav-icon:hover {
+  color: #fff;
+}
+
 .nav-link.active {
   color: #fff;
   font-weight: 700;
