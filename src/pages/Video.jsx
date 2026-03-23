@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { fetchVideos } from '../utils/sheets'
+import { useLang } from '../utils/i18n'
 import './Video.css'
 
 function Video() {
+  const { t } = useLang()
   const [videos, setVideos] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -16,11 +18,11 @@ function Video() {
   return (
     <div className="page">
       <img src="/assets/vid-shaham-black.png" alt="וידאו שחם - VID. SHAHAM" className="vid-shaham-logo" />
-      <p className="page-subtitle">היא תכנית שנתית להקרנת וידאו־ארט וקולנוע ניסיוני על מסך הפונה לרחוב בשחם מעבדת תרבות, באוצרות שרון בלבן. העבודות, המתחלפות לאורך השנה, מזמינות מפגש עירוני לילי עם יצירתם של אמני ואמניות וידאו צעירים, מתוך רצון לקדם קולות חדשים בסצנת הווידאו בירושלים.</p>
+      <p className="page-subtitle">{t('video.subtitle')}</p>
       <div className="divider"></div>
 
       {loading ? (
-        <p className="loading-text">טוען...</p>
+        <p className="loading-text">{t('loading')}</p>
       ) : videos.length > 0 ? (
         <div className="video-grid">
           {videos.map((video) => (
@@ -51,7 +53,7 @@ function Video() {
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <polygon points="5 3 19 12 5 21 5 3" />
           </svg>
-          <p>סרטונים יתווספו בקרוב</p>
+          <p>{t('video.empty')}</p>
         </div>
       )}
     </div>

@@ -3,34 +3,38 @@ import Home from './pages/Home'
 import Video from './pages/Video'
 import About from './pages/About'
 import NowShowing from './pages/NowShowing'
+import { useLang } from './utils/i18n'
 import './App.css'
 
-const navItems = [
-  { path: '/', label: 'בית' },
-  { path: '/video', label: 'וידאו שחם' },
-  { path: '/about', label: 'אודות' },
-  { path: '/now', label: 'מה מציגים עכשיו' },
+const navKeys = [
+  { path: '/', key: 'nav.home' },
+  { path: '/video', key: 'nav.video' },
+  { path: '/about', key: 'nav.about' },
+  { path: '/now', key: 'nav.now' },
 ]
+
+const langs = ['he', 'en', 'ar']
 
 function App() {
   const location = useLocation()
+  const { lang, setLang, t, dir } = useLang()
 
   return (
-    <div className="app">
+    <div className="app" dir={dir}>
       <header className="header">
         <div className="header-inner">
           <NavLink to="/" className="logo-link">
             <img src="/assets/shaham-logo.png" alt="שחם מעבדת תרבות" className="header-logo" />
           </NavLink>
           <nav className="nav">
-            {navItems.map(({ path, label }) => (
+            {navKeys.map(({ path, key }) => (
               <NavLink
                 key={path}
                 to={path}
                 end={path === '/'}
                 className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
               >
-                {label}
+                {t(key)}
               </NavLink>
             ))}
             <a href="https://www.instagram.com/shaham.jlm/" target="_blank" rel="noopener noreferrer" className="nav-icon">
@@ -40,6 +44,17 @@ function App() {
                 <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
               </svg>
             </a>
+            <div className="lang-switcher">
+              {langs.map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={`lang-btn ${lang === l ? 'lang-active' : ''}`}
+                >
+                  {l.toUpperCase()}
+                </button>
+              ))}
+            </div>
           </nav>
         </div>
       </header>
@@ -59,7 +74,7 @@ function App() {
             <img src="/assets/shaham-icon.png" alt="שחם" className="footer-logo-img" />
             <img src="/assets/sadeh-logo.png" alt="שדה - אמנות חזותית בירושלים" className="footer-logo-img" />
           </div>
-          <p className="footer-text">שחם מעבדת תרבות &copy; {new Date().getFullYear()}</p>
+          <p className="footer-text">{t('footer.text')} &copy; {new Date().getFullYear()}</p>
         </div>
       </footer>
     </div>

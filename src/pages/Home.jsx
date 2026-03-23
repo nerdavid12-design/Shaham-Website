@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { fetchPosters } from '../utils/sheets'
+import { useLang } from '../utils/i18n'
 import './Home.css'
 
 function Home() {
+  const { t } = useLang()
   const [posters, setPosters] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -23,17 +25,17 @@ function Home() {
             alt="שחם מעבדת תרבות"
             className="hero-logo"
           />
-          <p className="hero-tagline">מרחב ירושלמי לאמנות ניסיונית</p>
+          <p className="hero-tagline">{t('home.tagline')}</p>
         </div>
       </section>
 
       {/* Gallery Section */}
       <section className="page">
-        <h2 className="page-title">מפרויקטים ואירועים</h2>
+        <h2 className="page-title">{t('home.gallery.title')}</h2>
         <div className="divider"></div>
 
         {loading ? (
-          <p className="gallery-note">טוען...</p>
+          <p className="gallery-note">{t('loading')}</p>
         ) : posters.length > 0 ? (
           <div className="gallery">
             {posters.map((poster) => (
@@ -49,7 +51,7 @@ function Home() {
           </div>
         ) : (
           <p className="gallery-note">
-            תמונות מפרויקטים ואירועים יתווספו בקרוב
+            {t('home.gallery.empty')}
           </p>
         )}
       </section>

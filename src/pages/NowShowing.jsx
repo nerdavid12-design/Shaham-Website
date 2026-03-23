@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { fetchNowShowing } from '../utils/sheets'
+import { useLang } from '../utils/i18n'
 import './NowShowing.css'
 
 function NowShowing() {
+  const { t } = useLang()
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -15,11 +17,11 @@ function NowShowing() {
 
   return (
     <div className="page now-page">
-      <h1 className="page-title">מה מציגים עכשיו</h1>
+      <h1 className="page-title">{t('now.title')}</h1>
       <div className="divider"></div>
 
       {loading ? (
-        <p className="loading-text">טוען...</p>
+        <p className="loading-text">{t('loading')}</p>
       ) : items.length > 0 ? (
         <div className="now-items">
           {items.map((item) => (
@@ -70,10 +72,8 @@ function NowShowing() {
         </div>
       ) : (
         <div className="now-empty">
-          <h2 className="now-empty-title">בקרוב</h2>
-          <p className="now-empty-text">
-            פרטים על הפרויקט הנוכחי יתווספו בקרוב.
-          </p>
+          <h2 className="now-empty-title">{t('now.empty.title')}</h2>
+          <p className="now-empty-text">{t('now.empty.text')}</p>
         </div>
       )}
     </div>

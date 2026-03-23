@@ -67,6 +67,36 @@
   color: #fff;
 }
 
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-inline-start: 0.5rem;
+  border-inline-start: 1px solid rgba(255, 255, 255, 0.2);
+  padding-inline-start: 0.75rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0.25rem 0.4rem;
+  font-family: inherit;
+  transition: color 0.2s;
+}
+
+.lang-btn:hover {
+  color: #fff;
+}
+
+.lang-btn.lang-active {
+  color: #fff;
+  font-weight: 700;
+}
+
 .nav-link.active {
   color: #fff;
   font-weight: 700;
