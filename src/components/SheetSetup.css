@@ -1,0 +1,64 @@
+.sheet-setup {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 1000;
+}
+
+.sheet-setup-card {
+  background: var(--black);
+  color: #fff;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 360px;
+}
+
+.sheet-setup-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.sheet-setup-card p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+}
+
+.sheet-setup-card form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sheet-setup-card input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: inherit;
+}
+
+.sheet-setup-card input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.sheet-setup-card button {
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: var(--black);
+  border: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.sheet-setup-card button:hover {
+  background: var(--gray-light);
+}

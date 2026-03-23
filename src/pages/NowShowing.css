@@ -1,0 +1,29 @@
+.now-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 2rem;
+  background: var(--off-white);
+  border: 1px solid var(--gray-light);
+}
+
+.now-empty-icon {
+  color: var(--gray-mid);
+  margin-bottom: 1.5rem;
+  opacity: 0.4;
+}
+
+.now-empty-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+}
+
+.now-empty-text {
+  font-size: 1rem;
+  color: var(--gray-mid);
+  font-weight: 300;
+  line-height: 1.8;
+}
