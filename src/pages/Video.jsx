@@ -16,7 +16,7 @@ function Video() {
   return (
     <div className="page">
       <img src="/assets/vid-shaham-black.png" alt="וידאו שחם - VID. SHAHAM" className="vid-shaham-logo" />
-      <p className="page-subtitle">עבודות שהוצגו בעבר</p>
+      <p className="page-subtitle">היא תכנית שנתית להקרנת וידאו־ארט וקולנוע ניסיוני על מסך הפונה לרחוב בשחם מעבדת תרבות, באוצרות שרון בלבן. העבודות, המתחלפות לאורך השנה, מזמינות מפגש עירוני לילי עם יצירתם של אמני ואמניות וידאו צעירים, מתוך רצון לקדם קולות חדשים בסצנת הווידאו בירושלים.</p>
       <div className="divider"></div>
 
       {loading ? (

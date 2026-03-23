@@ -58,6 +58,15 @@ function driveImageUrl(url) {
   return url
 }
 
+function driveVideoUrl(url) {
+  if (!url) return ''
+  const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/)
+  if (match) {
+    return `https://drive.google.com/file/d/${match[1]}/preview`
+  }
+  return url
+}
+
 function youtubeId(url) {
   if (!url) return ''
   // Handle various YouTube URL formats
@@ -89,6 +98,28 @@ export async function fetchVideos() {
     })).filter(v => v.youtubeId)
   } catch (e) {
     console.error('Failed to fetch videos:', e)
+    return []
+  }
+}
+
+export async function fetchNowShowing() {
+  if (!SHEET_ID) return []
+  try {
+    const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=NowShowing`
+    const res = await fetch(url)
+    const csv = await res.text()
+    const rows = csvToArray(csv)
+    return rows.map((row, i) => ({
+      id: i + 1,
+      title: row['title'] || row['כותרת'] || '',
+      artist: row['artist'] || row['אמן'] || '',
+      description: row['description'] || row['תיאור'] || '',
+      youtubeId: youtubeId(row['youtube_url'] || ''),
+      imageUrl: driveImageUrl(row['image_url'] || ''),
+      videoUrl: driveVideoUrl(row['video_url'] || ''),
+    }))
+  } catch (e) {
+    console.error('Failed to fetch now showing:', e)
     return []
   }
 }
