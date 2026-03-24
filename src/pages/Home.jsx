@@ -45,7 +45,6 @@ function Home() {
                   src={poster.imageUrl}
                   alt={poster.title}
                   className="gallery-img"
-                  referrerPolicy="no-referrer"
                 />
               </div>
             ))}
