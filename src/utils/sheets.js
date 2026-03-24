@@ -133,10 +133,10 @@ export async function fetchHeroVideo() {
     const rows = csvToArray(csv)
     if (rows.length === 0) return ''
     const raw = rows[0]['video_url'] || ''
-    // Extract Drive file ID and return direct download URL for <video> tag
+    // Extract Drive file ID and return preview embed URL
     const match = raw.match(/\/d\/([a-zA-Z0-9_-]+)/)
     if (match) {
-      return `https://drive.google.com/uc?export=download&id=${match[1]}`
+      return match[1]
     }
     return raw
   } catch (e) {

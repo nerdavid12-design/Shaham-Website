@@ -7,28 +7,27 @@ function Home() {
   const { t } = useLang()
   const [posters, setPosters] = useState([])
   const [loading, setLoading] = useState(true)
-  const [heroVideoUrl, setHeroVideoUrl] = useState('')
+  const [heroVideoId, setHeroVideoId] = useState('')
 
   useEffect(() => {
     fetchPosters().then(data => {
       setPosters(data)
       setLoading(false)
     })
-    fetchHeroVideo().then(url => setHeroVideoUrl(url))
+    fetchHeroVideo().then(id => setHeroVideoId(id))
   }, [])
 
   return (
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-        {heroVideoUrl && (
-          <video
+        {heroVideoId && (
+          <iframe
             className="hero-video"
-            src={heroVideoUrl}
-            autoPlay
-            muted
-            loop
-            playsInline
+            src={`https://drive.google.com/file/d/${heroVideoId}/preview`}
+            allow="autoplay"
+            frameBorder="0"
+            title="Hero video"
           />
         )}
         <div className="hero-overlay" />
