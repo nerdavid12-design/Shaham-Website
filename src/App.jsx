@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import Video from './pages/Video'
@@ -18,21 +19,39 @@ const langs = ['he', 'en', 'ar']
 function App() {
   const location = useLocation()
   const { lang, setLang, t, dir } = useLang()
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <div className="app" dir={dir}>
       <header className="header">
         <div className="header-inner">
-          <NavLink to="/" className="logo-link">
+          <NavLink to="/" className="logo-link" onClick={() => setMenuOpen(false)}>
             <img src="/assets/shaham-logo.png" alt="שחם מעבדת תרבות" className="header-logo" />
           </NavLink>
-          <nav className="nav">
+          <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              {menuOpen ? (
+                <>
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </>
+              ) : (
+                <>
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </>
+              )}
+            </svg>
+          </button>
+          <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
             {navKeys.map(({ path, key }) => (
               <NavLink
                 key={path}
                 to={path}
                 end={path === '/'}
                 className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                onClick={() => setMenuOpen(false)}
               >
                 {t(key)}
               </NavLink>
