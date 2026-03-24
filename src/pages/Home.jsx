@@ -1,18 +1,13 @@
-import { useState, useEffect } from 'react'
-import { fetchPosters } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import './Home.css'
 
+const posters = [
+  { id: 1, title: 'אירוע השקה - BALL', imageUrl: '/assets/posters/ball.jpg' },
+  { id: 2, title: 'הגר: נושאת אבנים', imageUrl: '/assets/posters/hagar.png' },
+]
+
 function Home() {
   const { t } = useLang()
-  const [posters, setPosters] = useState([])
-  const [loading, setLoading] = useState(true)
-  useEffect(() => {
-    fetchPosters().then(data => {
-      setPosters(data)
-      setLoading(false)
-    })
-  }, [])
 
   return (
     <div className="home">
@@ -34,26 +29,17 @@ function Home() {
 
       {/* Gallery Section */}
       <section className="page">
-
-        {loading ? (
-          <p className="gallery-note">{t('loading')}</p>
-        ) : posters.length > 0 ? (
-          <div className="gallery">
-            {posters.map((poster) => (
-              <div key={poster.id} className="gallery-item">
-                <img
-                  src={poster.imageUrl}
-                  alt={poster.title}
-                  className="gallery-img"
-                />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="gallery-note">
-            {t('home.gallery.empty')}
-          </p>
-        )}
+        <div className="gallery">
+          {posters.map((poster) => (
+            <div key={poster.id} className="gallery-item">
+              <img
+                src={poster.imageUrl}
+                alt={poster.title}
+                className="gallery-img"
+              />
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   )
