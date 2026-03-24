@@ -26,21 +26,10 @@ function Home() {
           loop
           playsInline
         />
-        <div className="hero-overlay" />
-        <div className="hero-content">
-          <img
-            src="/assets/shaham-logo-vertical.png"
-            alt="שחם מעבדת תרבות"
-            className="hero-logo"
-          />
-          <p className="hero-tagline">{t('home.tagline')}</p>
-        </div>
       </section>
 
       {/* Gallery Section */}
       <section className="page">
-        <h2 className="page-title">{t('home.gallery.title')}</h2>
-        <div className="divider"></div>
 
         {loading ? (
           <p className="gallery-note">{t('loading')}</p>
