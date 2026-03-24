@@ -48,12 +48,18 @@ function parseCSV(csv) {
   return rows
 }
 
+// Map known Drive file IDs to local assets
+const localAssets = {
+  '1Sfwmal5Av1Ua6n_n8B4ghUfosGOnaAC8': '/assets/posters/ball.jpg',
+  '117o8hBYxgoT8LEnt6KkOllD34hxNhXJB': '/assets/posters/hagar.png',
+}
+
 function driveImageUrl(url) {
   if (!url) return ''
-  // Convert Google Drive share links to direct image URLs
   const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/)
   if (match) {
-    return `https://drive.google.com/uc?export=view&id=${match[1]}`
+    // Use local file if available, otherwise try Drive URL
+    return localAssets[match[1]] || `https://drive.google.com/uc?export=view&id=${match[1]}`
   }
   return url
 }

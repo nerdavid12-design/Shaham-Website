@@ -63,7 +63,6 @@ function NowShowing() {
                     src={item.imageUrl}
                     alt={item.title}
                     className="now-image"
-                    referrerPolicy="no-referrer"
                   />
                 </div>
               )}
