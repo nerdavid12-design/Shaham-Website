@@ -53,7 +53,7 @@ function driveImageUrl(url) {
   // Convert Google Drive share links to direct image URLs
   const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/)
   if (match) {
-    return `https://drive.google.com/thumbnail?id=${match[1]}&sz=w800`
+    return `https://drive.google.com/uc?export=view&id=${match[1]}`
   }
   return url
 }
