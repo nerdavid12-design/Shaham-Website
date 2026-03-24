@@ -1,6 +1,12 @@
 .vid-shaham-logo {
   height: 80px;
   width: auto;
+  margin-bottom: 0.5rem;
+}
+
+.video-curated {
+  font-size: 1.1rem;
+  font-weight: 500;
   margin-bottom: 1rem;
 }
 

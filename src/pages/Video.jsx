@@ -18,6 +18,7 @@ function Video() {
   return (
     <div className="page">
       <img src="/assets/vid-shaham-black.png" alt="וידאו שחם - VID. SHAHAM" className="vid-shaham-logo" />
+      <p className="video-curated">{t('video.heading')}</p>
       <p className="page-subtitle">{t('video.subtitle')}</p>
       <div className="divider"></div>
 
