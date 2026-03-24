@@ -18,14 +18,18 @@ function Home() {
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
+        {/* eslint-disable-next-line react/no-unknown-property */}
         <video
           className="hero-video"
-          src="/assets/hero-video.mp4"
           autoPlay
           muted
           loop
           playsInline
-        />
+          webkit-playsinline=""
+          preload="auto"
+        >
+          <source src="/assets/hero-video.mp4" type="video/mp4" />
+        </video>
       </section>
 
       {/* Gallery Section */}
