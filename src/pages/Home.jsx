@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchPosters, fetchHeroVideo } from '../utils/sheets'
+import { fetchPosters } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import './Home.css'
 
@@ -7,29 +7,25 @@ function Home() {
   const { t } = useLang()
   const [posters, setPosters] = useState([])
   const [loading, setLoading] = useState(true)
-  const [heroVideoId, setHeroVideoId] = useState('')
-
   useEffect(() => {
     fetchPosters().then(data => {
       setPosters(data)
       setLoading(false)
     })
-    fetchHeroVideo().then(id => setHeroVideoId(id))
   }, [])
 
   return (
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-        {heroVideoId && (
-          <iframe
-            className="hero-video"
-            src={`https://drive.google.com/file/d/${heroVideoId}/preview`}
-            allow="autoplay"
-            frameBorder="0"
-            title="Hero video"
-          />
-        )}
+        <video
+          className="hero-video"
+          src="/assets/hero-video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
         <div className="hero-overlay" />
         <div className="hero-content">
           <img
