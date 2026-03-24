@@ -124,6 +124,27 @@ export async function fetchNowShowing() {
   }
 }
 
+export async function fetchHeroVideo() {
+  if (!SHEET_ID) return ''
+  try {
+    const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=1075446200`
+    const res = await fetch(url)
+    const csv = await res.text()
+    const rows = csvToArray(csv)
+    if (rows.length === 0) return ''
+    const raw = rows[0]['video_url'] || ''
+    // Extract Drive file ID and return direct download URL for <video> tag
+    const match = raw.match(/\/d\/([a-zA-Z0-9_-]+)/)
+    if (match) {
+      return `https://drive.google.com/uc?export=download&id=${match[1]}`
+    }
+    return raw
+  } catch (e) {
+    console.error('Failed to fetch hero video:', e)
+    return ''
+  }
+}
+
 export async function fetchPosters() {
   if (!SHEET_ID) return []
   try {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchPosters } from '../utils/sheets'
+import { fetchPosters, fetchHeroVideo } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import './Home.css'
 
@@ -7,18 +7,31 @@ function Home() {
   const { t } = useLang()
   const [posters, setPosters] = useState([])
   const [loading, setLoading] = useState(true)
+  const [heroVideoUrl, setHeroVideoUrl] = useState('')
 
   useEffect(() => {
     fetchPosters().then(data => {
       setPosters(data)
       setLoading(false)
     })
+    fetchHeroVideo().then(url => setHeroVideoUrl(url))
   }, [])
 
   return (
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
+        {heroVideoUrl && (
+          <video
+            className="hero-video"
+            src={heroVideoUrl}
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        )}
+        <div className="hero-overlay" />
         <div className="hero-content">
           <img
             src="/assets/shaham-logo-vertical.png"
