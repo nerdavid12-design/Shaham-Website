@@ -16,11 +16,29 @@ function Video() {
   }, [])
 
   return (
-    <div className="page">
-      <img src="/assets/vid-shaham-black.png" alt="וידאו שחם - VID. SHAHAM" className="vid-shaham-logo" />
-      <p className="video-curated">{t('video.heading')}</p>
-      <p className="page-subtitle">{t('video.subtitle')}</p>
-      <div className="divider"></div>
+    <div className="video-page">
+      <section className="video-hero">
+        <video
+          className="video-hero-bg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          webkit-playsinline=""
+          preload="auto"
+        >
+          <source src="/assets/vid-hero.mp4" type="video/mp4" />
+        </video>
+        <div className="video-hero-overlay"></div>
+        <div className="video-hero-content">
+          <img src="/assets/vid-shaham-white.png" alt="וידאו שחם - VID. SHAHAM" className="vid-shaham-logo-hero" />
+        </div>
+      </section>
+
+      <div className="page">
+        <p className="video-curated">{t('video.heading')}</p>
+        <p className="page-subtitle">{t('video.subtitle')}</p>
+        <div className="divider"></div>
 
       {loading ? (
         <p className="loading-text">{t('loading')}</p>
@@ -57,6 +75,7 @@ function Video() {
           <p>{t('video.empty')}</p>
         </div>
       )}
+      </div>
     </div>
   )
 }
