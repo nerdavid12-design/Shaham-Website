@@ -53,7 +53,11 @@ function App() {
                 className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                 onClick={() => setMenuOpen(false)}
               >
-                {t(key)}
+                {path === '/video' ? (
+                  <img src="/assets/vid-shaham-white.png" alt="VID. SHAHAM" className="nav-vid-logo" />
+                ) : (
+                  t(key)
+                )}
               </NavLink>
             ))}
             <a href="https://www.instagram.com/shaham.jlm/" target="_blank" rel="noopener noreferrer" className="nav-icon">

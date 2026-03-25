@@ -67,6 +67,19 @@
   color: #fff;
 }
 
+.nav-vid-logo {
+  height: 22px;
+  width: auto;
+  display: block;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.nav-link:hover .nav-vid-logo,
+.nav-link.active .nav-vid-logo {
+  opacity: 1;
+}
+
 .lang-switcher {
   display: flex;
   align-items: center;
