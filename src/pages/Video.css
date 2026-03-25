@@ -46,7 +46,7 @@
 
 @media (max-width: 768px) {
   .video-hero {
-    min-height: 40vh;
+    display: none;
   }
 
   .vid-shaham-logo-hero {
