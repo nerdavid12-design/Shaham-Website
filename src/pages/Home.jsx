@@ -58,6 +58,7 @@ function Home() {
               tabIndex={0}
               aria-label={getPosterTitle(poster)}
               onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggleFlip(poster.id) }}
+              style={{ '--poster-bg': `url(${poster.imageUrl})` }}
             >
               <div className={`gallery-card${flippedId === poster.id ? ' flipped' : ''}`}>
                 <div className="gallery-card-front">
