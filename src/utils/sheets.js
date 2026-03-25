@@ -154,7 +154,6 @@ export async function fetchHeroVideo() {
 export async function fetchPosters() {
   if (!SHEET_ID) return []
   try {
-    // gid for the second sheet — we'll use sheet name instead
     const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=730644176`
     const res = await fetch(url)
     const csv = await res.text()
@@ -162,6 +161,13 @@ export async function fetchPosters() {
     return rows.map((row, i) => ({
       id: i + 1,
       title: row['title'] || row['כותרת'] || '',
+      title_en: row['title_en'] || '',
+      title_ar: row['title_ar'] || '',
+      description: row['description'] || row['תיאור'] || '',
+      description_en: row['description_en'] || '',
+      description_ar: row['description_ar'] || '',
+      startDate: row['start_date'] || '',
+      endDate: row['end_date'] || '',
       imageUrl: driveImageUrl(row['image_url'] || row['קישור_תמונה'] || ''),
     })).filter(p => p.imageUrl)
   } catch (e) {
