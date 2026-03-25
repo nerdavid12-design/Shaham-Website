@@ -208,6 +208,13 @@
     font-size: 1rem;
     width: 100%;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-vid-logo {
+    height: 20px;
   }
 
   .nav-icon {
