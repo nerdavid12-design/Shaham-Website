@@ -3,12 +3,12 @@ import { fetchPosters } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import './Home.css'
 
-// Icon split into 4 quadrants, each from a corner
+// Icon split into 4 quadrants, each sweeps in from a different rotation
 const iconParts = [
-  { clip: 'inset(0 50% 50% 0)',   dir: { x: -50, y: -50 } }, // top-right
-  { clip: 'inset(0 0 50% 50%)',   dir: { x: 50, y: -50 } },  // top-left
-  { clip: 'inset(50% 50% 0 0)',   dir: { x: -50, y: 50 } },  // bottom-right
-  { clip: 'inset(50% 0 0 50%)',   dir: { x: 50, y: 50 } },   // bottom-left
+  { clip: 'inset(0 50% 50% 0)',   rot: -135 }, // top-right — sweeps from upper-left
+  { clip: 'inset(0 0 50% 50%)',   rot:  135 }, // top-left  — sweeps from upper-right
+  { clip: 'inset(50% 50% 0 0)',   rot:  120 }, // bottom-right — sweeps from lower-left
+  { clip: 'inset(50% 0 0 50%)',   rot: -120 }, // bottom-left  — sweeps from lower-right
 ]
 
 function AnimatedLogo() {
@@ -28,9 +28,8 @@ function AnimatedLogo() {
             key={i}
             className="logo-anim-icon-part"
             style={{
-              '--from-x': `${part.dir.x}px`,
-              '--from-y': `${part.dir.y}px`,
-              '--delay': `${i * 0.04}s`,
+              '--from-rot': `${part.rot}deg`,
+              '--delay': `${i * 0.08}s`,
               clipPath: part.clip,
             }}
           >
