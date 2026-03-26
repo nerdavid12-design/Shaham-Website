@@ -40,83 +40,59 @@
   letter-spacing: 0.05em;
 }
 
-/* ===== Animated Logo ===== */
+/* ===== Animated Logo — Echo Spread ===== */
 .logo-anim {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 1.5rem;
-  direction: ltr; /* keep layout LTR so icon is always on right */
+  justify-content: center;
+  overflow: visible;
 }
 
-.logo-anim-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  align-items: flex-end; /* right-align Hebrew text */
-  direction: rtl;
-}
-
-.logo-anim-char {
-  display: inline-block;
-  opacity: 0;
-  transform: translate(var(--from-x), var(--from-y));
-  transition: opacity 1.0s ease-out var(--delay),
-              transform 1.0s cubic-bezier(0.16, 1, 0.3, 1) var(--delay);
-}
-
-.logo-anim-active .logo-anim-char {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
-.logo-anim-line {
-  display: flex;
-  justify-content: space-between;
-  font-size: 3.6rem;
-  font-weight: 900;
-  color: #fff;
-  line-height: 1.05;
-  width: 100%;
-}
-
-.logo-anim-line-sub {
-  font-size: 1.9rem;
-  font-weight: 900;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.logo-anim-space {
-  display: inline-block;
-  width: 0.4em;
-}
-
-/* Icon wrapper */
-.logo-anim-icon-wrap {
+.logo-echo-wrap {
   position: relative;
   width: 200px;
   height: 200px;
-  flex-shrink: 0;
 }
 
-.logo-anim-icon-part {
+.logo-echo {
   position: absolute;
   inset: 0;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center copy: scales in from small then holds */
+.logo-echo-center .logo-echo-img {
   opacity: 0;
-  transform: rotate(var(--from-rot)) scale(0.6);
-  transform-origin: center center;
-  transition: opacity 0.9s ease-out var(--delay),
-              transform 1.1s cubic-bezier(0.16, 1, 0.3, 1) var(--delay);
+  transform: scale(0.4);
+  animation: echo-center 3s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
 }
 
-.logo-anim-active .logo-anim-icon-part {
-  opacity: 1;
-  transform: rotate(0deg) scale(1);
+@keyframes echo-center {
+  0%   { opacity: 0;  transform: scale(0.4); }
+  20%  { opacity: 1;  transform: scale(1.05); }
+  35%  { opacity: 1;  transform: scale(1); }
+  100% { opacity: 1;  transform: scale(1); }
 }
 
-.logo-anim-icon-img {
+/* Side copies: spread outward from center and fade */
+.logo-echo-side .logo-echo-img {
+  opacity: 0;
+  transform: translateX(0) scale(0.4);
+  animation: echo-side 3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  animation-delay: calc(0.1s + var(--abs) * 0.06s);
+}
+
+@keyframes echo-side {
+  0%   { opacity: 0;    transform: translateX(0) scale(0.4); }
+  15%  { opacity: 0.7;  transform: translateX(calc(var(--offset) * 55px)) scale(0.95); }
+  40%  { opacity: 0.4;  transform: translateX(calc(var(--offset) * 110px)) scale(0.85); }
+  70%  { opacity: 0.15; transform: translateX(calc(var(--offset) * 150px)) scale(0.75); }
+  100% { opacity: 0;    transform: translateX(calc(var(--offset) * 170px)) scale(0.65); }
+}
+
+.logo-echo-img {
   width: 200px;
   height: 200px;
   object-fit: contain;

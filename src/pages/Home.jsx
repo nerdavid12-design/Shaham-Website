@@ -3,13 +3,10 @@ import { fetchPosters } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import './Home.css'
 
-// Icon split into 4 quadrants, each sweeps in from a different rotation
-const iconParts = [
-  { clip: 'inset(0 50% 50% 0)',   rot: -135 }, // top-right — sweeps from upper-left
-  { clip: 'inset(0 0 50% 50%)',   rot:  135 }, // top-left  — sweeps from upper-right
-  { clip: 'inset(50% 50% 0 0)',   rot:  120 }, // bottom-right — sweeps from lower-left
-  { clip: 'inset(50% 0 0 50%)',   rot: -120 }, // bottom-left  — sweeps from lower-right
-]
+// Echo offsets: center + 4 copies on each side
+const ECHO_COUNT = 4 // copies on each side
+const echoes = Array.from({ length: ECHO_COUNT * 2 + 1 }, (_, i) => i - ECHO_COUNT)
+// [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 
 function AnimatedLogo() {
   const [animate, setAnimate] = useState(false)
@@ -21,20 +18,18 @@ function AnimatedLogo() {
 
   return (
     <div className={`logo-anim ${animate ? 'logo-anim-active' : ''}`}>
-      {/* Icon split into 4 quadrants */}
-      <div className="logo-anim-icon-wrap">
-        {iconParts.map((part, i) => (
-          <span
-            key={i}
-            className="logo-anim-icon-part"
+      <div className="logo-echo-wrap">
+        {echoes.map((offset) => (
+          <div
+            key={offset}
+            className={`logo-echo ${offset === 0 ? 'logo-echo-center' : 'logo-echo-side'}`}
             style={{
-              '--from-rot': `${part.rot}deg`,
-              '--delay': `${i * 0.08}s`,
-              clipPath: part.clip,
+              '--offset': offset,
+              '--abs': Math.abs(offset),
             }}
           >
-            <img src="/assets/shaham-icon.png" alt="" className="logo-anim-icon-img" />
-          </span>
+            <img src="/assets/shaham-icon.png" alt="" className="logo-echo-img" />
+          </div>
         ))}
       </div>
     </div>
