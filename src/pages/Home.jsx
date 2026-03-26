@@ -1,7 +1,89 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { fetchPosters } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import './Home.css'
+
+// Each character slides from a different direction
+const directions = [
+  { x: 0, y: -60 },   // top
+  { x: 50, y: -40 },  // top-right
+  { x: -50, y: 0 },   // left
+  { x: 60, y: 30 },   // bottom-right
+  { x: 0, y: 60 },    // bottom
+  { x: -40, y: -30 }, // top-left
+  { x: 40, y: 0 },    // right
+  { x: 0, y: -50 },   // top
+  { x: -60, y: 20 },  // bottom-left
+  { x: 50, y: -20 },  // top-right
+  { x: 0, y: 50 },    // bottom
+]
+
+function AnimatedLogo() {
+  const [animate, setAnimate] = useState(false)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    // Trigger animation on mount (page open or return from another tab)
+    const timer = setTimeout(() => setAnimate(true), 100)
+    return () => clearTimeout(timer)
+  }, [])
+
+  const iconDir = directions[0]
+  const line1 = 'שחם'
+  const line2 = 'מעבדת תרבות'
+
+  return (
+    <div className={`logo-anim ${animate ? 'logo-anim-active' : ''}`} ref={ref}>
+      <span
+        className="logo-anim-icon"
+        style={{
+          '--from-x': `${iconDir.x}px`,
+          '--from-y': `${iconDir.y}px`,
+          '--delay': '0s',
+        }}
+      >
+        <img src="/assets/shaham-icon.png" alt="" className="logo-anim-icon-img" />
+      </span>
+      <span className="logo-anim-line">
+        {line1.split('').map((char, i) => {
+          const dir = directions[(i + 1) % directions.length]
+          return (
+            <span
+              key={i}
+              className="logo-anim-char"
+              style={{
+                '--from-x': `${dir.x}px`,
+                '--from-y': `${dir.y}px`,
+                '--delay': `${0.3 + i * 0.15}s`,
+              }}
+            >
+              {char}
+            </span>
+          )
+        })}
+      </span>
+      <span className="logo-anim-line logo-anim-line-sub">
+        {line2.split('').map((char, i) => {
+          const dir = directions[(i + 4) % directions.length]
+          const isSpace = char === ' '
+          return (
+            <span
+              key={i}
+              className={`logo-anim-char ${isSpace ? 'logo-anim-space' : ''}`}
+              style={{
+                '--from-x': `${dir.x}px`,
+                '--from-y': `${dir.y}px`,
+                '--delay': `${1.0 + i * 0.08}s`,
+              }}
+            >
+              {isSpace ? '\u00A0' : char}
+            </span>
+          )
+        })}
+      </span>
+    </div>
+  )
+}
 
 function Home() {
   const { t, lang } = useLang()
@@ -30,7 +112,7 @@ function Home() {
 
   return (
     <div className="home">
-      {/* Hero Section */}
+      {/* Hero with animated logo over video */}
       <section className="hero">
         {/* eslint-disable-next-line react/no-unknown-property */}
         <video
@@ -44,6 +126,10 @@ function Home() {
         >
           <source src="/assets/hero-video.mp4" type="video/mp4" />
         </video>
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+          <AnimatedLogo />
+        </div>
       </section>
 
       {/* Gallery Section */}
