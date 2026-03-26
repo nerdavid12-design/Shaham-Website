@@ -43,29 +43,48 @@ function Video() {
       {loading ? (
         <p className="loading-text">{t('loading')}</p>
       ) : videos.length > 0 ? (
-        <div className="video-grid">
-          {videos.map((video) => (
-            <article key={video.id} className="video-card">
-              <div className="video-embed">
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                  title={video.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+        <div className="video-sections">
+          <h2 className="video-year-header">2026</h2>
+          {(() => {
+            const groups = []
+            let currentMonth = null
+            let currentGroup = []
+            videos.forEach((video) => {
+              if (video.month !== currentMonth) {
+                if (currentGroup.length > 0) groups.push({ month: currentMonth, videos: currentGroup })
+                currentMonth = video.month
+                currentGroup = [video]
+              } else {
+                currentGroup.push(video)
+              }
+            })
+            if (currentGroup.length > 0) groups.push({ month: currentMonth, videos: currentGroup })
+            return groups.map(({ month, videos: groupVideos }) => (
+              <div key={month} className="video-month-group">
+                {month && <h3 className="video-month-header">{month}</h3>}
+                <div className="video-grid">
+                  {groupVideos.map((video) => (
+                    <article key={video.id} className="video-card">
+                      <div className="video-embed">
+                        <iframe
+                          src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                          title={video.title}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                      <div className="video-info">
+                        <h3 className="video-title">{video.title}</h3>
+                        {video.artist && <p className="video-artist">{video.artist}</p>}
+                        {video.description && <p className="video-description">{video.description}</p>}
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
-              <div className="video-info">
-                <h3 className="video-title">{video.title}</h3>
-                {video.artist && (
-                  <p className="video-artist">{video.artist}</p>
-                )}
-                {video.description && (
-                  <p className="video-description">{video.description}</p>
-                )}
-              </div>
-            </article>
-          ))}
+            ))
+          })()}
         </div>
       ) : (
         <div className="video-empty">

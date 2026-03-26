@@ -60,6 +60,34 @@
   margin-bottom: 1rem;
 }
 
+.video-sections {
+  width: 100%;
+}
+
+.video-year-header {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--black);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+  border-bottom: 3px solid var(--black);
+  padding-bottom: 0.5rem;
+}
+
+.video-month-group {
+  margin-bottom: 3rem;
+}
+
+.video-month-header {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 1.25rem;
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));

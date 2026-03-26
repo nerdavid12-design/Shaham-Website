@@ -101,6 +101,7 @@ export async function fetchVideos() {
       artist: row['artist'] || row['אמן'] || '',
       description: row['description'] || row['תיאור'] || '',
       youtubeId: youtubeId(row['youtube_url'] || row['קישור'] || ''),
+      month: row['month'] || row['חודש'] || '',
     })).filter(v => v.youtubeId)
   } catch (e) {
     console.error('Failed to fetch videos:', e)
