@@ -1,3 +1,35 @@
+/* ===== About Hero ===== */
+.about-hero {
+  position: relative;
+  min-height: 50vh;
+  overflow: hidden;
+  background: var(--black);
+}
+
+.about-hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    display: none;
+  }
+}
+
 .about-content {
   display: flex;
   gap: 4rem;

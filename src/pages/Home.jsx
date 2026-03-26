@@ -112,20 +112,8 @@ function Home() {
 
   return (
     <div className="home">
-      {/* Hero with animated logo over video */}
+      {/* Hero with animated logo over still image */}
       <section className="hero">
-        {/* eslint-disable-next-line react/no-unknown-property */}
-        <video
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          webkit-playsinline=""
-          preload="auto"
-        >
-          <source src="/assets/hero-video.mp4" type="video/mp4" />
-        </video>
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <AnimatedLogo />

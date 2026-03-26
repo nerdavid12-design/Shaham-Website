@@ -5,7 +5,22 @@ function About() {
   const { t } = useLang()
 
   return (
-    <div className="page about-page">
+    <div className="about-page">
+      <section className="about-hero">
+        <video
+          className="about-hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src="/assets/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="about-hero-overlay"></div>
+      </section>
+
+      <div className="page">
       <h1 className="page-title">{t('about.title')}</h1>
       <div className="divider"></div>
 
@@ -23,6 +38,7 @@ function About() {
           <h3 className="about-subheading">{t('about.vision')}</h3>
           <p>{t('about.vision.text')}</p>
         </div>
+      </div>
       </div>
     </div>
   )
