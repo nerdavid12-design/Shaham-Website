@@ -3,22 +3,6 @@ import { fetchPosters } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import './Home.css'
 
-// Character directions — varied for visual interest
-const charDirs = [
-  { x: 0, y: -60 },
-  { x: 55, y: -35 },
-  { x: -55, y: 0 },
-  { x: 60, y: 30 },
-  { x: 0, y: 65 },
-  { x: -45, y: -30 },
-  { x: 45, y: 0 },
-  { x: 0, y: -50 },
-  { x: -60, y: 25 },
-  { x: 50, y: -20 },
-  { x: 0, y: 50 },
-  { x: -35, y: 40 },
-]
-
 // Icon split into 4 quadrants, each from a corner
 const iconParts = [
   { clip: 'inset(0 50% 50% 0)',   dir: { x: -50, y: -50 } }, // top-right
@@ -35,53 +19,8 @@ function AnimatedLogo() {
     return () => clearTimeout(timer)
   }, [])
 
-  const line1 = 'שחם'
-  const line2 = 'מעבדת תרבות'
-  const DELAY = '0.05s' // slight stagger within 1.2s window
-
   return (
     <div className={`logo-anim ${animate ? 'logo-anim-active' : ''}`}>
-      {/* Text block */}
-      <div className="logo-anim-text">
-        <span className="logo-anim-line">
-          {line1.split('').map((char, i) => {
-            const dir = charDirs[i % charDirs.length]
-            return (
-              <span
-                key={i}
-                className="logo-anim-char"
-                style={{
-                  '--from-x': `${dir.x}px`,
-                  '--from-y': `${dir.y}px`,
-                  '--delay': `${i * 0.04}s`,
-                }}
-              >
-                {char}
-              </span>
-            )
-          })}
-        </span>
-        <span className="logo-anim-line logo-anim-line-sub">
-          {line2.split('').map((char, i) => {
-            const dir = charDirs[(i + 3) % charDirs.length]
-            const isSpace = char === ' '
-            return (
-              <span
-                key={i}
-                className={`logo-anim-char ${isSpace ? 'logo-anim-space' : ''}`}
-                style={{
-                  '--from-x': `${dir.x}px`,
-                  '--from-y': `${dir.y}px`,
-                  '--delay': `${i * 0.03}s`,
-                }}
-              >
-                {isSpace ? '\u00A0' : char}
-              </span>
-            )
-          })}
-        </span>
-      </div>
-
       {/* Icon split into 4 quadrants */}
       <div className="logo-anim-icon-wrap">
         {iconParts.map((part, i) => (
