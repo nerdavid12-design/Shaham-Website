@@ -43,54 +43,85 @@
 /* ===== Animated Logo ===== */
 .logo-anim {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 0.25rem;
+  gap: 1.5rem;
+  direction: ltr; /* keep layout LTR so icon is always on right */
 }
 
-.logo-anim-icon,
+.logo-anim-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  align-items: flex-end; /* right-align Hebrew text */
+  direction: rtl;
+}
+
 .logo-anim-char {
   display: inline-block;
   opacity: 0;
   transform: translate(var(--from-x), var(--from-y));
-  transition: opacity 1.2s ease-out var(--delay),
-              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) var(--delay);
+  transition: opacity 1.0s ease-out var(--delay),
+              transform 1.0s cubic-bezier(0.16, 1, 0.3, 1) var(--delay);
 }
 
-.logo-anim-active .logo-anim-icon,
 .logo-anim-active .logo-anim-char {
   opacity: 1;
   transform: translate(0, 0);
 }
 
-.logo-anim-icon-img {
-  height: 80px;
-  width: auto;
-  filter: invert(1);
-  margin-bottom: 0.75rem;
-}
-
 .logo-anim-line {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   font-size: 4.5rem;
   font-weight: 900;
   color: #fff;
   letter-spacing: 0.08em;
   line-height: 1.05;
-  width: 100%;
 }
 
 .logo-anim-line-sub {
-  font-size: 2.1rem;
+  font-size: 2.08rem;
   font-weight: 900;
-  letter-spacing: 0.15em;
-  width: 100%;
+  letter-spacing: 0.295em;
   justify-content: space-between;
+  width: 100%;
 }
 
 .logo-anim-space {
-  flex: 1;
+  display: inline-block;
+  width: 0.4em;
+}
+
+/* Icon wrapper — same height as the two text lines combined */
+.logo-anim-icon-wrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.logo-anim-icon-part {
+  position: absolute;
+  inset: 0;
+  display: block;
+  opacity: 0;
+  transform: translate(var(--from-x), var(--from-y));
+  transition: opacity 1.0s ease-out var(--delay),
+              transform 1.0s cubic-bezier(0.16, 1, 0.3, 1) var(--delay);
+}
+
+.logo-anim-active .logo-anim-icon-part {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.logo-anim-icon-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  filter: invert(1);
+  display: block;
 }
 
 /* ===== Gallery ===== */
@@ -254,16 +285,28 @@
     display: none;
   }
 
+  .logo-anim {
+    gap: 0.75rem;
+  }
+
   .logo-anim-line {
     font-size: 2.5rem;
+    letter-spacing: 0.06em;
   }
 
   .logo-anim-line-sub {
-    font-size: 1.25rem;
+    font-size: 1.16rem;
+    letter-spacing: 0.28em;
+  }
+
+  .logo-anim-icon-wrap {
+    width: 56px;
+    height: 56px;
   }
 
   .logo-anim-icon-img {
-    height: 50px;
+    width: 56px;
+    height: 56px;
   }
 
   .gallery {
