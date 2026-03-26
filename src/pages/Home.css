@@ -72,18 +72,17 @@
 
 .logo-anim-line {
   display: flex;
-  justify-content: flex-end;
-  font-size: 4.5rem;
+  justify-content: space-between;
+  font-size: 3.6rem;
   font-weight: 900;
   color: #fff;
-  letter-spacing: 0.08em;
   line-height: 1.05;
+  width: 100%;
 }
 
 .logo-anim-line-sub {
-  font-size: 2.08rem;
+  font-size: 1.9rem;
   font-weight: 900;
-  letter-spacing: 0.295em;
   justify-content: space-between;
   width: 100%;
 }
@@ -93,11 +92,11 @@
   width: 0.4em;
 }
 
-/* Icon wrapper — same height as the two text lines combined */
+/* Icon wrapper */
 .logo-anim-icon-wrap {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   flex-shrink: 0;
 }
 
@@ -117,8 +116,8 @@
 }
 
 .logo-anim-icon-img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   object-fit: contain;
   filter: invert(1);
   display: block;
@@ -290,23 +289,21 @@
   }
 
   .logo-anim-line {
-    font-size: 2.5rem;
-    letter-spacing: 0.06em;
+    font-size: 1.8rem;
   }
 
   .logo-anim-line-sub {
-    font-size: 1.16rem;
-    letter-spacing: 0.28em;
+    font-size: 0.95rem;
   }
 
   .logo-anim-icon-wrap {
-    width: 56px;
-    height: 56px;
+    width: 100px;
+    height: 100px;
   }
 
   .logo-anim-icon-img {
-    width: 56px;
-    height: 56px;
+    width: 100px;
+    height: 100px;
   }
 
   .gallery {
