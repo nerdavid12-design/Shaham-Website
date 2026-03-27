@@ -49,7 +49,7 @@ function Video() {
         </video>
         <div className="video-hero-overlay"></div>
         <div className="video-hero-content">
-          <img src="/assets/vid-shaham-white.png" alt="וידאו שחם - VID. SHAHAM" className="vid-shaham-logo-hero" />
+          <img src="/assets/vid-shaham-neon.png" alt="וידאו שחם - VID. SHAHAM" className="vid-shaham-logo-hero" />
         </div>
       </section>
 
