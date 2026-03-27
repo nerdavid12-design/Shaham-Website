@@ -1,6 +1,7 @@
-.now-page {
+.now-bg {
   background: url('/assets/now-bg.jpg') center/cover no-repeat fixed;
   min-height: 100vh;
+  width: 100%;
 }
 
 .now-items {

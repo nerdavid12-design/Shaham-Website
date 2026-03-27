@@ -21,7 +21,8 @@ function NowShowing() {
 
   return (
     <PageTransition>
-    <div className="page now-page" ref={pageRef}>
+    <div className="now-bg" ref={pageRef}>
+    <div className="page now-page">
       <h1 className="page-title">{t('now.title')}</h1>
       <div className="divider"></div>
 
@@ -80,6 +81,7 @@ function NowShowing() {
           <p className="now-empty-text">{t('now.empty.text')}</p>
         </div>
       )}
+    </div>
     </div>
     </PageTransition>
   )
