@@ -6,9 +6,15 @@ import useSplitTextAnimation from '../hooks/useSplitTextAnimation'
 import './Video.css'
 
 function Video() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const [videos, setVideos] = useState([])
   const [loading, setLoading] = useState(true)
+
+  function localize(item, field) {
+    if (lang === 'en' && item[`${field}_en`]) return item[`${field}_en`]
+    if (lang === 'ar' && item[`${field}_ar`]) return item[`${field}_ar`]
+    return item[field] || ''
+  }
 
   useEffect(() => {
     fetchVideos().then(data => {
@@ -73,7 +79,7 @@ function Video() {
             if (currentGroup.length > 0) groups.push({ month: currentMonth, videos: currentGroup })
             return groups.map(({ month, videos: groupVideos }) => (
               <div key={month} className="video-month-group">
-                {month && <h3 className="video-month-header">{month}</h3>}
+                {month && <h3 className="video-month-header">{localize({ month, month_en: groupVideos[0]?.month_en, month_ar: groupVideos[0]?.month_ar }, 'month')}</h3>}
                 <div className="video-grid">
                   {groupVideos.map((video) => (
                     <article key={video.id} className="video-card">
@@ -87,9 +93,9 @@ function Video() {
                         ></iframe>
                       </div>
                       <div className="video-info">
-                        <h3 className="video-title">{video.title}</h3>
-                        {video.artist && <p className="video-artist">{video.artist}</p>}
-                        {video.description && <p className="video-description">{video.description}</p>}
+                        <h3 className="video-title">{localize(video, 'title')}</h3>
+                        {video.artist && <p className="video-artist">{localize(video, 'artist')}</p>}
+                        {video.description && <p className="video-description">{localize(video, 'description')}</p>}
                       </div>
                     </article>
                   ))}

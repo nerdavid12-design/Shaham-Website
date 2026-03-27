@@ -6,9 +6,15 @@ import useSplitTextAnimation from '../hooks/useSplitTextAnimation'
 import './NowShowing.css'
 
 function NowShowing() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(true)
+
+  function localize(item, field) {
+    if (lang === 'en' && item[`${field}_en`]) return item[`${field}_en`]
+    if (lang === 'ar' && item[`${field}_ar`]) return item[`${field}_ar`]
+    return item[field] || ''
+  }
 
   useEffect(() => {
     fetchNowShowing().then(data => {
@@ -33,12 +39,12 @@ function NowShowing() {
           {items.map((item) => (
             <article key={item.id} className="now-card">
               <div className="now-info">
-                <h2 className="now-title">{item.title}</h2>
+                <h2 className="now-title">{localize(item, 'title')}</h2>
                 {item.artist && (
-                  <p className="now-artist">{item.artist}</p>
+                  <p className="now-artist">{localize(item, 'artist')}</p>
                 )}
                 {item.description && (
-                  <p className="now-description">{item.description}</p>
+                  <p className="now-description">{localize(item, 'description')}</p>
                 )}
               </div>
               {item.youtubeId && (

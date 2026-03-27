@@ -98,10 +98,18 @@ export async function fetchVideos() {
     return rows.map((row, i) => ({
       id: i + 1,
       title: row['title'] || row['כותרת'] || '',
+      title_en: row['title_en'] || '',
+      title_ar: row['title_ar'] || '',
       artist: row['artist'] || row['אמן'] || '',
+      artist_en: row['artist_en'] || '',
+      artist_ar: row['artist_ar'] || '',
       description: row['description'] || row['תיאור'] || '',
+      description_en: row['description_en'] || '',
+      description_ar: row['description_ar'] || '',
       youtubeId: youtubeId(row['youtube_url'] || row['קישור'] || ''),
       month: row['month'] || row['חודש'] || '',
+      month_en: row['month_en'] || '',
+      month_ar: row['month_ar'] || '',
     })).filter(v => v.youtubeId)
   } catch (e) {
     console.error('Failed to fetch videos:', e)
@@ -119,8 +127,14 @@ export async function fetchNowShowing() {
     return rows.map((row, i) => ({
       id: i + 1,
       title: row['title'] || row['כותרת'] || '',
+      title_en: row['title_en'] || '',
+      title_ar: row['title_ar'] || '',
       artist: row['artist'] || row['אמן'] || '',
+      artist_en: row['artist_en'] || '',
+      artist_ar: row['artist_ar'] || '',
       description: row['description'] || row['תיאור'] || '',
+      description_en: row['description_en'] || '',
+      description_ar: row['description_ar'] || '',
       youtubeId: youtubeId(row['youtube_url'] || ''),
       imageUrl: driveImageUrl(row['image_url'] || ''),
       videoUrl: driveVideoUrl(row['video_url'] || ''),
