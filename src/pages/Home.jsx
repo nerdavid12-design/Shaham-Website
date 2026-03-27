@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { fetchPosters } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import PageTransition from '../components/PageTransition'
+import useSplitTextAnimation from '../hooks/useSplitTextAnimation'
 import './Home.css'
 
 // Echo offsets: center + 4 copies on each side
@@ -46,6 +47,8 @@ function Home() {
     fetchPosters().then(data => setPosters(data))
   }, [])
 
+  const pageRef = useSplitTextAnimation([posters.length, t])
+
   function toggleFlip(id) {
     setFlippedId(prev => prev === id ? null : id)
   }
@@ -64,7 +67,7 @@ function Home() {
 
   return (
     <PageTransition>
-    <div className="home">
+    <div className="home" ref={pageRef}>
       {/* Hero with animated logo over still image */}
       <section className="hero">
         <div className="hero-overlay"></div>

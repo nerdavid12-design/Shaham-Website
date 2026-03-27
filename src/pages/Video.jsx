@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { fetchVideos } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import PageTransition from '../components/PageTransition'
+import useSplitTextAnimation from '../hooks/useSplitTextAnimation'
 import './Video.css'
 
 function Video() {
@@ -16,9 +17,11 @@ function Video() {
     })
   }, [])
 
+  const pageRef = useSplitTextAnimation([loading, t])
+
   return (
     <PageTransition>
-    <div className="video-page">
+    <div className="video-page" ref={pageRef}>
       <section className="video-hero">
         <video
           className="video-hero-bg"

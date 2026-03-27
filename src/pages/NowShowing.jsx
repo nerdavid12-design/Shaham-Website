@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { fetchNowShowing } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import PageTransition from '../components/PageTransition'
+import useSplitTextAnimation from '../hooks/useSplitTextAnimation'
 import './NowShowing.css'
 
 function NowShowing() {
@@ -16,9 +17,11 @@ function NowShowing() {
     })
   }, [])
 
+  const pageRef = useSplitTextAnimation([loading, t])
+
   return (
     <PageTransition>
-    <div className="page now-page">
+    <div className="page now-page" ref={pageRef}>
       <h1 className="page-title">{t('now.title')}</h1>
       <div className="divider"></div>
 

@@ -253,9 +253,10 @@
 }
 
 .page-subtitle {
-  font-size: 1.76rem;
-  color: var(--gray-mid);
+  font-size: 1.35rem;
+  color: var(--gray-dark);
   font-weight: 300;
+  line-height: 1.9;
   margin-bottom: 2.5rem;
 }
 
