@@ -4,6 +4,10 @@
   width: 100%;
 }
 
+.now-page {
+  background: transparent !important;
+}
+
 .now-items {
   display: flex;
   flex-direction: column;
@@ -11,9 +15,10 @@
 }
 
 .now-card {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.88);
   border: 1px solid var(--gray-light);
   overflow: hidden;
+  backdrop-filter: blur(4px);
 }
 
 .now-embed {
@@ -79,7 +84,8 @@
   justify-content: center;
   text-align: center;
   padding: 5rem 2rem;
-  background: var(--off-white);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(4px);
   border: 1px solid var(--gray-light);
 }
 
