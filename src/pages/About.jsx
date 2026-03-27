@@ -13,7 +13,7 @@ function About() {
 
   useEffect(() => {
     if (!pageRef.current) return
-    const targets = pageRef.current.querySelectorAll('h1, h2, h3, p')
+    const targets = pageRef.current.querySelectorAll('h1, p')
     const splits = []
     const ctx = gsap.context(() => {
       targets.forEach((el) => {
@@ -56,7 +56,7 @@ function About() {
       </section>
 
       <div className="page">
-      <h1 className="page-title">{t('about.title')}</h1>
+      <h1 className="page-title">{t('about.vision')}</h1>
       <div className="divider"></div>
 
       <div className="about-content">
@@ -68,9 +68,6 @@ function About() {
           />
         </div>
         <div className="about-text">
-          <h2 className="about-heading">{t('about.heading')}</h2>
-
-          <h3 className="about-subheading">{t('about.vision')}</h3>
           <p>{t('about.vision.text')}</p>
         </div>
       </div>
