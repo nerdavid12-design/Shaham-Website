@@ -55,7 +55,10 @@ function App() {
                 onClick={() => setMenuOpen(false)}
               >
                 {path === '/video' ? (
-                  <img src="/assets/vid-shaham-white.png" alt="VID. SHAHAM" className="nav-vid-logo" />
+                  <span className="nav-vid-logo-wrap">
+                    <img src="/assets/vid-shaham-white.png" alt="VID. SHAHAM" className="nav-vid-logo nav-vid-white" />
+                    <img src="/assets/vid-shaham-neon.png" alt="" className="nav-vid-logo nav-vid-neon" aria-hidden="true" />
+                  </span>
                 ) : (
                   t(key)
                 )}
