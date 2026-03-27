@@ -16,6 +16,7 @@ const translations = {
     // Video
     'video.subtitle': 'תכנית שנתית להקרנת וידאו ארט וקולנוע ניסיוני על מסך הפונה לרחוב בשחם מעבדת תרבות. העבודות מזמינות מפגש עירוני לילי עם יצירתם של אמני ואמניות וידאו צעירים, מתוך רצון לקדם קולות חדשים בסצנת הווידאו בירושלים.',
     'video.heading': 'וידאו שחם | באוצרות שרון בלבן',
+    'video.curated': '| באוצרות שרון בלבן',
     'video.empty': 'סרטונים יתווספו בקרוב',
 
     // About
@@ -54,6 +55,7 @@ const translations = {
     // Video
     'video.subtitle': 'An annual program geared towards screening video art and experimental cinema on a street-facing screen. The works invite pedestrians for a nightly urban encounter with the creations of young video artists, aiming to promote new voices within the local Jerusalem video scene.',
     'video.heading': 'Vid.Shaham | Curated by Sharon Balban',
+    'video.curated': '| Curated by Sharon Balban',
     'video.empty': 'Videos coming soon',
 
     // About
@@ -92,6 +94,7 @@ const translations = {
     // Video
     'video.subtitle': 'برنامج سنوي لعرض فن الفيديو والسينما التجريبية على شاشة تطل على الشارع في مختبر "شحام" الثقافي. تدعو الأعمال إلى لقاء مدني ليلي مع إبداعات فناني وفنانات فيديو شباب، انطلاقاً من الرغبة في تعزيز أصوات جديدة في مشهد الفيديو في القدس.',
     'video.heading': 'فيديو شحام | من تقييم شارون بلبان',
+    'video.curated': '| من تقييم شارون بلبان',
     'video.empty': 'ستُضاف مقاطع فيديو قريباً',
 
     // About

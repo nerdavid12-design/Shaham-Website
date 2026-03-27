@@ -54,7 +54,10 @@ function Video() {
       </section>
 
       <div className="page">
-        <p className="video-curated">{t('video.heading')}</p>
+        <p className="video-curated">
+          <img src="/assets/vid-shaham-black.png" alt="וידאו שחם" className="video-curated-logo" />
+          <span>{t('video.curated')}</span>
+        </p>
         <p className="page-subtitle">{t('video.subtitle')}</p>
         <div className="divider"></div>
 

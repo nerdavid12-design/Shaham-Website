@@ -60,6 +60,17 @@
   line-height: 1.9;
   color: var(--gray-dark);
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.video-curated-logo {
+  height: 1.2em;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .video-sections {
