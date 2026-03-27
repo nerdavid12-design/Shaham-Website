@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { fetchPosters } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
+import PageTransition from '../components/PageTransition'
 import './Home.css'
 
 // Echo offsets: center + 4 copies on each side
@@ -62,6 +63,7 @@ function Home() {
   }
 
   return (
+    <PageTransition>
     <div className="home">
       {/* Hero with animated logo over still image */}
       <section className="hero">
@@ -110,6 +112,7 @@ function Home() {
         </div>
       </section>
     </div>
+    </PageTransition>
   )
 }
 

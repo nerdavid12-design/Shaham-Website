@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLang } from '../utils/i18n'
+import PageTransition from '../components/PageTransition'
 import './About.css'
 
 gsap.registerPlugin(SplitText, ScrollTrigger)
@@ -40,6 +41,7 @@ function About() {
   }, [t])
 
   return (
+    <PageTransition>
     <div className="about-page" ref={pageRef}>
       <section className="about-hero">
         <video
@@ -73,6 +75,7 @@ function About() {
       </div>
       </div>
     </div>
+    </PageTransition>
   )
 }
 

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 import Home from './pages/Home'
 import Video from './pages/Video'
 import About from './pages/About'
@@ -83,12 +84,14 @@ function App() {
       </header>
 
       <main className="main">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/video" element={<Video />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/now" element={<NowShowing />} />
-        </Routes>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/video" element={<Video />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/now" element={<NowShowing />} />
+          </Routes>
+        </AnimatePresence>
       </main>
 
       <footer className="footer">

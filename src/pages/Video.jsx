@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { fetchVideos } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
+import PageTransition from '../components/PageTransition'
 import './Video.css'
 
 function Video() {
@@ -16,6 +17,7 @@ function Video() {
   }, [])
 
   return (
+    <PageTransition>
     <div className="video-page">
       <section className="video-hero">
         <video
@@ -96,6 +98,7 @@ function Video() {
       )}
       </div>
     </div>
+    </PageTransition>
   )
 }
 

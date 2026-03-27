@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { fetchNowShowing } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
+import PageTransition from '../components/PageTransition'
 import './NowShowing.css'
 
 function NowShowing() {
@@ -16,6 +17,7 @@ function NowShowing() {
   }, [])
 
   return (
+    <PageTransition>
     <div className="page now-page">
       <h1 className="page-title">{t('now.title')}</h1>
       <div className="divider"></div>
@@ -76,6 +78,7 @@ function NowShowing() {
         </div>
       )}
     </div>
+    </PageTransition>
   )
 }
 
