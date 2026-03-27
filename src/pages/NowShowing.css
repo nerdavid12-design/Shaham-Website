@@ -36,18 +36,16 @@
   height: 100%;
 }
 
-.now-image-wrap {
-  width: 100%;
-  overflow: hidden;
+.now-instagram-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0;
 }
 
-.now-image {
-  width: 100%;
-  height: auto;
-  max-height: 500px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
+.now-instagram-wrap .instagram-media {
+  margin: 0 auto !important;
+  max-width: 540px !important;
+  width: 100% !important;
 }
 
 .now-info {

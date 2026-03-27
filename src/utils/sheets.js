@@ -138,6 +138,7 @@ export async function fetchNowShowing() {
       youtubeId: youtubeId(row['youtube_url'] || ''),
       imageUrl: driveImageUrl(row['image_url'] || ''),
       videoUrl: driveVideoUrl(row['video_url'] || ''),
+      instagramUrl: row['instagram_url'] || '',
     }))
   } catch (e) {
     console.error('Failed to fetch now showing:', e)

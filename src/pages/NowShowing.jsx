@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { fetchNowShowing } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import PageTransition from '../components/PageTransition'
@@ -22,6 +22,28 @@ function NowShowing() {
       setLoading(false)
     })
   }, [])
+
+  // Load Instagram embed script and process embeds when items load
+  useEffect(() => {
+    if (loading || items.length === 0) return
+    const hasInstagram = items.some(i => i.instagramUrl)
+    if (!hasInstagram) return
+
+    if (window.instgrm) {
+      window.instgrm.Embeds.process()
+      return
+    }
+    const script = document.createElement('script')
+    script.src = 'https://www.instagram.com/embed.js'
+    script.async = true
+    script.onload = () => {
+      if (window.instgrm) window.instgrm.Embeds.process()
+    }
+    document.body.appendChild(script)
+    return () => {
+      if (document.body.contains(script)) document.body.removeChild(script)
+    }
+  }, [loading, items])
 
   const pageRef = useSplitTextAnimation([loading])
 
@@ -69,13 +91,14 @@ function NowShowing() {
                   ></iframe>
                 </div>
               )}
-              {item.imageUrl && (
-                <div className="now-image-wrap">
-                  <img
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className="now-image"
-                  />
+              {item.instagramUrl && (
+                <div className="now-instagram-wrap">
+                  <blockquote
+                    className="instagram-media"
+                    data-instgrm-permalink={item.instagramUrl}
+                    data-instgrm-version="14"
+                    data-instgrm-captioned
+                  ></blockquote>
                 </div>
               )}
             </article>
