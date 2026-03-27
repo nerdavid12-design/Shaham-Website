@@ -1,44 +1,7 @@
-import { useState, useEffect, useRef } from 'react'
-import { animate, scroll } from 'motion'
+import { useState, useEffect } from 'react'
 import { fetchVideos } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import './Video.css'
-
-function ScrollGallery({ videos }) {
-  const containerRef = useRef(null)
-
-  useEffect(() => {
-    if (!containerRef.current || videos.length === 0) return
-    const items = containerRef.current.querySelectorAll('.scroll-gallery-item > div')
-    const cleanups = []
-    items.forEach((item) => {
-      const stop = scroll(
-        animate(item, { opacity: [0, 1, 1, 0] }),
-        { target: item, offset: ['start end', 'end end', 'start start', 'end start'] }
-      )
-      cleanups.push(stop)
-    })
-    return () => cleanups.forEach(fn => fn?.())
-  }, [videos])
-
-  if (videos.length === 0) return null
-
-  return (
-    <div ref={containerRef} className="scroll-gallery">
-      {videos.map((video, i) => (
-        <section key={video.id} className="scroll-gallery-item">
-          <div>
-            <img
-              src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
-              alt={video.title}
-            />
-            <h2>#{String(i + 1).padStart(3, '0')}</h2>
-          </div>
-        </section>
-      ))}
-    </div>
-  )
-}
 
 function Video() {
   const { t } = useLang()
@@ -132,7 +95,6 @@ function Video() {
         </div>
       )}
       </div>
-      <ScrollGallery videos={videos} />
     </div>
   )
 }
