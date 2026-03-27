@@ -1,7 +1,39 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { animate, scroll } from 'motion'
 import { fetchVideos } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import './Video.css'
+
+function ScrollGallery() {
+  const containerRef = useRef(null)
+
+  useEffect(() => {
+    if (!containerRef.current) return
+    const items = containerRef.current.querySelectorAll('.scroll-gallery-item > div')
+    const cleanups = []
+    items.forEach((item) => {
+      const stop = scroll(
+        animate(item, { opacity: [0, 1, 1, 0] }),
+        { target: item, offset: ['start end', 'end end', 'start start', 'end start'] }
+      )
+      cleanups.push(stop)
+    })
+    return () => cleanups.forEach(fn => fn?.())
+  }, [])
+
+  return (
+    <div ref={containerRef} className="scroll-gallery">
+      {[1, 2, 3, 4, 5].map((n) => (
+        <section key={n} className="scroll-gallery-item">
+          <div>
+            <img src={`/photos/cityscape/${n}.jpg`} alt={`#${String(n).padStart(3, '0')}`} />
+            <h2>#{String(n).padStart(3, '0')}</h2>
+          </div>
+        </section>
+      ))}
+    </div>
+  )
+}
 
 function Video() {
   const { t } = useLang()
@@ -95,6 +127,7 @@ function Video() {
         </div>
       )}
       </div>
+      <ScrollGallery />
     </div>
   )
 }
