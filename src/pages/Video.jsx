@@ -4,11 +4,11 @@ import { fetchVideos } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import './Video.css'
 
-function ScrollGallery() {
+function ScrollGallery({ videos }) {
   const containerRef = useRef(null)
 
   useEffect(() => {
-    if (!containerRef.current) return
+    if (!containerRef.current || videos.length === 0) return
     const items = containerRef.current.querySelectorAll('.scroll-gallery-item > div')
     const cleanups = []
     items.forEach((item) => {
@@ -19,15 +19,20 @@ function ScrollGallery() {
       cleanups.push(stop)
     })
     return () => cleanups.forEach(fn => fn?.())
-  }, [])
+  }, [videos])
+
+  if (videos.length === 0) return null
 
   return (
     <div ref={containerRef} className="scroll-gallery">
-      {[1, 2, 3, 4, 5].map((n) => (
-        <section key={n} className="scroll-gallery-item">
+      {videos.map((video, i) => (
+        <section key={video.id} className="scroll-gallery-item">
           <div>
-            <img src={`/photos/cityscape/${n}.jpg`} alt={`#${String(n).padStart(3, '0')}`} />
-            <h2>#{String(n).padStart(3, '0')}</h2>
+            <img
+              src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+              alt={video.title}
+            />
+            <h2>#{String(i + 1).padStart(3, '0')}</h2>
           </div>
         </section>
       ))}
@@ -127,7 +132,7 @@ function Video() {
         </div>
       )}
       </div>
-      <ScrollGallery />
+      <ScrollGallery videos={videos} />
     </div>
   )
 }
