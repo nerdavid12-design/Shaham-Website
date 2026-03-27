@@ -1,11 +1,46 @@
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { SplitText } from 'gsap/SplitText'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLang } from '../utils/i18n'
 import './About.css'
 
+gsap.registerPlugin(SplitText, ScrollTrigger)
+
 function About() {
   const { t } = useLang()
+  const pageRef = useRef(null)
+
+  useEffect(() => {
+    if (!pageRef.current) return
+    const targets = pageRef.current.querySelectorAll('h1, h2, h3, p')
+    const splits = []
+    const ctx = gsap.context(() => {
+      targets.forEach((el) => {
+        const split = SplitText.create(el, { type: 'words' })
+        splits.push(split)
+        gsap.from(split.words, {
+          opacity: 0,
+          y: 20,
+          duration: 0.6,
+          stagger: 0.04,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            once: true,
+          },
+        })
+      })
+    }, pageRef)
+    return () => {
+      ctx.revert()
+      splits.forEach(s => s.revert())
+    }
+  }, [t])
 
   return (
-    <div className="about-page">
+    <div className="about-page" ref={pageRef}>
       <section className="about-hero">
         <video
           className="about-hero-video"
