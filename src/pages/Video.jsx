@@ -23,7 +23,7 @@ function Video() {
     })
   }, [])
 
-  const pageRef = useSplitTextAnimation([loading, t])
+  const pageRef = useSplitTextAnimation([loading])
   const videoRef = useRef(null)
 
   function handleVideoError() {

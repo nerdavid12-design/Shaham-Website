@@ -23,7 +23,7 @@ function NowShowing() {
     })
   }, [])
 
-  const pageRef = useSplitTextAnimation([loading, t])
+  const pageRef = useSplitTextAnimation([loading])
 
   return (
     <PageTransition>

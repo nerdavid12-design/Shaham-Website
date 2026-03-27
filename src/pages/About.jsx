@@ -38,7 +38,7 @@ function About() {
       ctx.revert()
       splits.forEach(s => s.revert())
     }
-  }, [t])
+  }, [])
 
   return (
     <PageTransition>
