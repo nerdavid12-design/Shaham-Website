@@ -51,6 +51,7 @@ function About() {
           loop
           playsInline
           preload="auto"
+          onError={(e) => { e.currentTarget.style.display = 'none' }}
         >
           <source src="/assets/hero-video.mp4" type="video/mp4" />
         </video>

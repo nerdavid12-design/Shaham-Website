@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { fetchVideos } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import PageTransition from '../components/PageTransition'
@@ -18,12 +18,18 @@ function Video() {
   }, [])
 
   const pageRef = useSplitTextAnimation([loading, t])
+  const videoRef = useRef(null)
+
+  function handleVideoError() {
+    if (videoRef.current) videoRef.current.style.display = 'none'
+  }
 
   return (
     <PageTransition>
     <div className="video-page" ref={pageRef}>
       <section className="video-hero">
         <video
+          ref={videoRef}
           className="video-hero-bg"
           autoPlay
           muted
@@ -31,8 +37,9 @@ function Video() {
           playsInline
           webkit-playsinline=""
           preload="auto"
+          onError={handleVideoError}
         >
-          <source src="/assets/vid-hero.mp4" type="video/mp4" />
+          <source src="/assets/vid-hero.mp4" type="video/mp4" onError={handleVideoError} />
         </video>
         <div className="video-hero-overlay"></div>
         <div className="video-hero-content">
