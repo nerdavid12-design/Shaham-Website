@@ -15,25 +15,11 @@
 }
 
 .event-card {
-  background: var(--event-bg, rgba(255,255,255,0.1)) center/cover no-repeat;
-  border: 1px solid var(--gray-light);
+  background: var(--black);
   overflow: hidden;
-  position: relative;
-  min-height: 420px;
-  display: flex;
-  align-items: flex-end;
-}
-
-.event-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.2) 100%);
 }
 
 .event-content {
-  position: relative;
-  z-index: 1;
   padding: 2rem;
   width: 100%;
   color: var(--white);
