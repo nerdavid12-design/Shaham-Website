@@ -10,34 +10,33 @@ const ECHO_COUNT = 4 // copies on each side
 const echoes = Array.from({ length: ECHO_COUNT * 2 + 1 }, (_, i) => i - ECHO_COUNT)
 // [-4, -3, -2, -1, 0, 1, 2, 3, 4]
 
-function AnimatedLogoVideo() {
+function AnimatedLogo() {
+  const [animate, setAnimate] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setAnimate(true), 100)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
-    <video autoPlay muted playsInline style={{ width: '100%', maxWidth: 600 }}>
-      <source src="/assets/shaham-logo.webm" type="video/webm" />
-    </video>
+    <div className={`logo-anim ${animate ? 'logo-anim-active' : ''}`}>
+      <div className="logo-echo-wrap">
+        {echoes.map((offset) => (
+          <div
+            key={offset}
+            className={`logo-echo ${offset === 0 ? 'logo-echo-center' : 'logo-echo-side'}`}
+            style={{
+              '--offset': offset,
+              '--abs': Math.abs(offset),
+            }}
+          >
+            <img src="/assets/shaham-icon.png" alt="" className="logo-echo-img" />
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }
-
-// Original echo animation — kept for easy switching back
-// function AnimatedLogo() {
-//   const [animate, setAnimate] = useState(false)
-//   useEffect(() => {
-//     const timer = setTimeout(() => setAnimate(true), 100)
-//     return () => clearTimeout(timer)
-//   }, [])
-//   return (
-//     <div className={`logo-anim ${animate ? 'logo-anim-active' : ''}`}>
-//       <div className="logo-echo-wrap">
-//         {echoes.map((offset) => (
-//           <div key={offset} className={`logo-echo ${offset === 0 ? 'logo-echo-center' : 'logo-echo-side'}`}
-//             style={{ '--offset': offset, '--abs': Math.abs(offset) }}>
-//             <img src="/assets/shaham-icon.png" alt="" className="logo-echo-img" />
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   )
-// }
 
 function Home() {
   const { t, lang } = useLang()
@@ -73,7 +72,7 @@ function Home() {
       <section className="hero">
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <AnimatedLogoVideo />
+          <AnimatedLogo />
         </div>
       </section>
 
