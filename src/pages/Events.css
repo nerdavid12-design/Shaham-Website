@@ -1,3 +1,13 @@
+.events-bg {
+  background: var(--black) center/cover no-repeat fixed;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.events-inner {
+  background: transparent !important;
+}
+
 .events-list {
   display: flex;
   flex-direction: column;
@@ -5,7 +15,7 @@
 }
 
 .event-card {
-  background: var(--event-bg, var(--white)) center/cover no-repeat;
+  background: var(--event-bg, rgba(255,255,255,0.1)) center/cover no-repeat;
   border: 1px solid var(--gray-light);
   overflow: hidden;
   position: relative;

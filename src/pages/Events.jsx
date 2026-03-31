@@ -132,10 +132,16 @@ function Events() {
     }
   }
 
+  const bgImage = events[0]?.imageUrl || ''
+
   return (
     <PageTransition>
+    <div
+      className="events-bg"
+      style={bgImage ? { backgroundImage: `url(${bgImage})` } : {}}
+    >
     <div className="events-page" ref={pageRef}>
-      <div className="page">
+      <div className="page events-inner">
         <h1 className="page-title">{t('events.title')}</h1>
         <div className="divider"></div>
 
@@ -203,6 +209,7 @@ function Events() {
           </>
         )}
       </div>
+    </div>
     </div>
     </PageTransition>
   )
