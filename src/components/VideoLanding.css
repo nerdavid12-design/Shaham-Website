@@ -111,21 +111,9 @@
   padding: 3rem 0 2rem;
 }
 
-.vl-title-he {
-  font-size: clamp(3rem, 9vw, 7rem);
-  font-weight: 900;
-  line-height: 1.1;
-  color: var(--black);
-  margin-bottom: 0.25rem;
-}
-
-.vl-title-en {
-  font-family: 'Space Mono', 'Courier New', monospace;
-  font-size: clamp(2.5rem, 8vw, 6rem);
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--black);
-  letter-spacing: 0.05em;
+.vl-hero-logo {
+  height: clamp(80px, 15vw, 180px);
+  width: auto;
 }
 
 /* ===== Program Description ===== */

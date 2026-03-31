@@ -17,8 +17,7 @@ function VideoLanding({ featuredVideo, localize }) {
 
       {/* Hero title */}
       <div className="vl-hero">
-        <h1 className="vl-title-he">וידאו. שחם</h1>
-        <h2 className="vl-title-en">VID. SHAHAM</h2>
+        <img src="/assets/vid-shaham-neon.png" alt="וידאו שחם - VID. SHAHAM" className="vl-hero-logo" />
       </div>
 
       {/* Program description */}
