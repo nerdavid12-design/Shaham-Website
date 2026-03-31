@@ -59,7 +59,7 @@ function driveImageUrl(url) {
   const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/)
   if (match) {
     // Use local file if available, otherwise try Drive URL
-    return localAssets[match[1]] || `https://drive.google.com/uc?export=view&id=${match[1]}`
+    return localAssets[match[1]] || `https://drive.google.com/thumbnail?id=${match[1]}&sz=w1200`
   }
   return url
 }
