@@ -34,6 +34,21 @@ const translations = {
     'now.hagar.title': 'הגר: נושאת אבנים | אנה קוצ\'ריאבי',
     'now.hagar.description': 'הפרויקט הוא מעבדת מחקר ופיתוח רב-תחומית החוקרת גלות, זיכרון ומרחב קדוש דרך סיפורה של הגר. בבסיסו, הפרויקט שואל: כיצד המרחב מעצב את חוויית הטראומה, הזיכרון והגעגוע?',
 
+    // Events
+    'nav.events': 'אירועים',
+    'events.title': 'אירועים',
+    'events.signup': 'הרשמה',
+    'events.signup.success': 'נרשמת בהצלחה!',
+    'events.signup.error': 'שגיאה בהרשמה, נסו שוב.',
+    'events.signup.sending': 'שולח...',
+    'events.name': 'שם מלא',
+    'events.email': 'אימייל',
+    'events.phone': 'טלפון',
+    'events.guests': 'מספר אורחים',
+    'events.empty.title': 'בקרוב',
+    'events.empty.text': 'אירועים קרובים יתווספו בקרוב.',
+    'events.past': 'אירועים שהיו',
+
     // Common
     'loading': 'טוען...',
 
@@ -73,6 +88,21 @@ const translations = {
     'now.hagar.title': 'Hagar, Who Carries Stones | Annie Q',
     'now.hagar.description': 'A multidisciplinary research and development lab exploring exile, memory, and sacred space through the story of Hagar. At its core, the project asks: How does space shape the experience of trauma, memory, and longing?',
 
+    // Events
+    'nav.events': 'Events',
+    'events.title': 'Events',
+    'events.signup': 'Sign Up',
+    'events.signup.success': 'Successfully registered!',
+    'events.signup.error': 'Registration failed, please try again.',
+    'events.signup.sending': 'Sending...',
+    'events.name': 'Full Name',
+    'events.email': 'Email',
+    'events.phone': 'Phone',
+    'events.guests': 'Number of Guests',
+    'events.empty.title': 'Coming Soon',
+    'events.empty.text': 'Upcoming events will be added soon.',
+    'events.past': 'Past Events',
+
     // Common
     'loading': 'Loading...',
 
@@ -111,6 +141,21 @@ const translations = {
     'now.empty.text': 'ستُضاف تفاصيل المشروع الحالي قريباً.',
     'now.hagar.title': 'هاجر: حاملة الحجارة | أنا كوتشريافي',
     'now.hagar.description': 'مختبر بحث وتطوير متعدد المجالات يستكشف النفي والذاكرة والحيز المقدس من خلال قصة هاجر. في جوهره، يتساءل المشروع: كيف يشكل الحيز تجربة الصدمة والذاكرة والشوق؟',
+
+    // Events
+    'nav.events': 'فعاليات',
+    'events.title': 'فعاليات',
+    'events.signup': 'التسجيل',
+    'events.signup.success': 'تم التسجيل بنجاح!',
+    'events.signup.error': 'فشل التسجيل، يرجى المحاولة مرة أخرى.',
+    'events.signup.sending': 'جارٍ الإرسال...',
+    'events.name': 'الاسم الكامل',
+    'events.email': 'البريد الإلكتروني',
+    'events.phone': 'الهاتف',
+    'events.guests': 'عدد الضيوف',
+    'events.empty.title': 'قريباً',
+    'events.empty.text': 'ستُضاف الفعاليات القادمة قريباً.',
+    'events.past': 'فعاليات سابقة',
 
     // Common
     'loading': 'جاري التحميل...',

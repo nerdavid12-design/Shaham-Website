@@ -167,6 +167,34 @@ export async function fetchHeroVideo() {
   }
 }
 
+export async function fetchEvents() {
+  if (!SHEET_ID) return []
+  try {
+    const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=Events`
+    const res = await fetch(url)
+    const csv = await res.text()
+    const rows = csvToArray(csv)
+    return rows.map((row, i) => ({
+      id: i + 1,
+      title: row['title'] || row['כותרת'] || '',
+      title_en: row['title_en'] || '',
+      title_ar: row['title_ar'] || '',
+      date: row['date'] || row['תאריך'] || '',
+      time: row['time'] || row['שעה'] || '',
+      location: row['location'] || row['מיקום'] || '',
+      location_en: row['location_en'] || '',
+      location_ar: row['location_ar'] || '',
+      description: row['description'] || row['תיאור'] || '',
+      description_en: row['description_en'] || '',
+      description_ar: row['description_ar'] || '',
+      imageUrl: driveImageUrl(row['image_url'] || ''),
+    })).filter(e => e.title)
+  } catch (e) {
+    console.error('Failed to fetch events:', e)
+    return []
+  }
+}
+
 export async function fetchPosters() {
   if (!SHEET_ID) return []
   try {
