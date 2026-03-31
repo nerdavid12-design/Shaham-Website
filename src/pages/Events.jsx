@@ -144,12 +144,11 @@ function Events() {
         ) : upcoming.length > 0 ? (
           <div className="events-list">
             {upcoming.map((event) => (
-              <article key={event.id} className="event-card">
-                {event.imageUrl && (
-                  <div className="event-image-wrap">
-                    <img src={event.imageUrl} alt={event.title} className="event-image" />
-                  </div>
-                )}
+              <article
+                key={event.id}
+                className="event-card"
+                style={event.imageUrl ? { '--event-bg': `url(${event.imageUrl})` } : {}}
+              >
                 <div className="event-content">
                   <div className="event-meta">
                     {event.date && <span className="event-date">{formatDate(event.date)}</span>}
