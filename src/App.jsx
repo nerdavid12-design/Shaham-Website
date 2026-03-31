@@ -12,7 +12,6 @@ import './App.css'
 const navKeys = [
   { path: '/', key: 'nav.home' },
   { path: '/video', key: 'nav.video' },
-  { path: '/about', key: 'nav.about' },
   { path: '/now', key: 'nav.now' },
   { path: '/events', key: 'nav.events' },
 ]

@@ -1,3 +1,16 @@
+/* ===== About text on home ===== */
+.home-about {
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.home-about-text {
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--gray-dark);
+  max-width: 700px;
+}
+
 /* ===== Hero ===== */
 .hero {
   position: relative;

@@ -76,6 +76,11 @@ function Home() {
         </div>
       </section>
 
+      {/* About text */}
+      <section className="page home-about">
+        <p className="home-about-text">{t('about.vision.text')}</p>
+      </section>
+
       {/* Gallery Section */}
       <section className="page">
         <div className="gallery">
