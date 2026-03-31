@@ -8,7 +8,7 @@
   font-weight: 300;
   line-height: 1.9;
   color: var(--gray-dark);
-  max-width: 700px;
+  width: 100%;
 }
 
 /* ===== Hero ===== */
