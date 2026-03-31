@@ -1,13 +1,15 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { fetchVideos } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import PageTransition from '../components/PageTransition'
+import VideoLanding from '../components/VideoLanding'
 import useSplitTextAnimation from '../hooks/useSplitTextAnimation'
 import './Video.css'
 
 function Video() {
   const { t, lang } = useLang()
   const [videos, setVideos] = useState([])
+  const [featuredVideo, setFeaturedVideo] = useState(null)
   const [loading, setLoading] = useState(true)
 
   function localize(item, field) {
@@ -18,40 +20,19 @@ function Video() {
 
   useEffect(() => {
     fetchVideos().then(data => {
+      const featured = data.find(v => v.featured)
+      setFeaturedVideo(featured || null)
       setVideos(data)
       setLoading(false)
     })
   }, [])
 
   const pageRef = useSplitTextAnimation([loading])
-  const videoRef = useRef(null)
-
-  function handleVideoError() {
-    if (videoRef.current) videoRef.current.style.display = 'none'
-  }
 
   return (
     <PageTransition>
     <div className="video-page" ref={pageRef}>
-      <section className="video-hero">
-        <video
-          ref={videoRef}
-          className="video-hero-bg"
-          autoPlay
-          muted
-          loop
-          playsInline
-          webkit-playsinline=""
-          preload="auto"
-          onError={handleVideoError}
-        >
-          <source src="/assets/vid-hero.mp4" type="video/mp4" onError={handleVideoError} />
-        </video>
-        <div className="video-hero-overlay"></div>
-        <div className="video-hero-content">
-          <img src="/assets/vid-shaham-neon.png" alt="וידאו שחם - VID. SHAHAM" className="vid-shaham-logo-hero" />
-        </div>
-      </section>
+      <VideoLanding featuredVideo={featuredVideo} localize={localize} />
 
       <div className="page">
         <p className="video-curated">

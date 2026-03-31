@@ -18,6 +18,10 @@ const translations = {
     'video.heading': 'וידאו שחם | באוצרות שרון בלבן',
     'video.curated': '| באוצרות שרון בלבן',
     'video.empty': 'סרטונים יתווספו בקרוב',
+    'video.now': 'עכשיו',
+    'video.about_artist': 'על האמן',
+    'video.on_view': 'מוצג',
+    'video.on_view_en': 'ON VIEW',
 
     // About
     'about.title': 'אודות',
@@ -72,6 +76,10 @@ const translations = {
     'video.heading': 'Vid.Shaham | Curated by Sharon Balban',
     'video.curated': '| Curated by Sharon Balban',
     'video.empty': 'Videos coming soon',
+    'video.now': 'Now Showing',
+    'video.about_artist': 'About the Artist',
+    'video.on_view': 'On View',
+    'video.on_view_en': 'ON VIEW',
 
     // About
     'about.title': 'About',
@@ -126,6 +134,10 @@ const translations = {
     'video.heading': 'فيديو شحام | من تقييم شارون بلبان',
     'video.curated': '| من تقييم شارون بلبان',
     'video.empty': 'ستُضاف مقاطع فيديو قريباً',
+    'video.now': 'الآن',
+    'video.about_artist': 'عن الفنان',
+    'video.on_view': 'معروض',
+    'video.on_view_en': 'ON VIEW',
 
     // About
     'about.title': 'حول',

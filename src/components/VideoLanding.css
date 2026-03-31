@@ -1,0 +1,378 @@
+/* ===== Video Landing Section ===== */
+.vl {
+  --vl-cream: #faf5ef;
+  --vl-green: #00ff66;
+  --vl-magenta: #ff00ff;
+
+  background: var(--vl-cream);
+  color: var(--black);
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+}
+
+/* ===== Decorative Shapes ===== */
+.vl-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vl-shape--green-bar-1 {
+  background: var(--vl-green);
+  width: clamp(150px, 30vw, 400px);
+  height: 28px;
+  top: 22%;
+  left: 8%;
+}
+
+.vl-shape--green-bar-2 {
+  background: var(--vl-green);
+  width: clamp(120px, 25vw, 350px);
+  height: 28px;
+  top: 28%;
+  right: 5%;
+}
+
+.vl-shape--green-bar-3 {
+  background: var(--vl-green);
+  width: clamp(180px, 30vw, 420px);
+  height: 28px;
+  bottom: 18%;
+  right: 10%;
+}
+
+.vl-shape--magenta-l-1 {
+  width: 60px;
+  height: 120px;
+  top: 20%;
+  right: 12%;
+  background: var(--vl-magenta);
+}
+.vl-shape--magenta-l-1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  height: 60px;
+  background: var(--vl-magenta);
+}
+
+.vl-shape--magenta-l-2 {
+  width: 50px;
+  height: 100px;
+  bottom: 30%;
+  left: 5%;
+  background: var(--vl-magenta);
+}
+.vl-shape--magenta-l-2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 50px;
+  background: var(--vl-magenta);
+}
+
+.vl-shape--magenta-l-3 {
+  width: 50px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  background: var(--vl-magenta);
+  position: absolute;
+}
+.vl-shape--magenta-l-3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 50px;
+  background: var(--vl-magenta);
+}
+
+.vl-shape--green-ring {
+  border: 18px solid var(--vl-green);
+  border-radius: 50%;
+  width: clamp(120px, 18vw, 220px);
+  height: clamp(120px, 18vw, 220px);
+  top: 4%;
+  left: 30%;
+}
+
+/* ===== Hero Title ===== */
+.vl-hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3rem 0 2rem;
+}
+
+.vl-title-he {
+  font-size: clamp(3rem, 9vw, 7rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--black);
+  margin-bottom: 0.25rem;
+}
+
+.vl-title-en {
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--black);
+  letter-spacing: 0.05em;
+}
+
+/* ===== Program Description ===== */
+.vl-desc {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 3rem auto 3rem;
+  padding-inline-end: 2rem;
+  border-inline-end: 2px solid var(--black);
+}
+
+.vl-desc p {
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.9;
+  color: var(--black);
+  text-align: start;
+}
+
+/* ===== "Now" Banner ===== */
+.vl-now-section {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 4rem 0 3rem;
+}
+
+.vl-now {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  display: inline-block;
+}
+
+/* ===== Highlights ===== */
+.vl-highlight-magenta {
+  background: var(--vl-magenta);
+  color: var(--black);
+  padding: 0.05em 0.4em;
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.vl-highlight-green {
+  background: var(--vl-green);
+  color: var(--black);
+  padding: 0.05em 0.4em;
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* ===== Featured Video Embed ===== */
+.vl-featured-embed {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding-top: 45%; /* ~16:9 for max-width */
+  background: var(--black);
+}
+
+.vl-featured-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== Featured Info ===== */
+.vl-featured-info {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 0 auto 4rem;
+  max-width: 800px;
+}
+
+.vl-artist-he {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.vl-artist-en {
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: clamp(1.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.vl-meta {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+}
+
+.vl-work-title-he {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.vl-work-title-en {
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* ===== About the Artist ===== */
+.vl-about {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+}
+
+.vl-about-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.vl-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.vl-about-bio p,
+.vl-about-work p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 400;
+  text-align: start;
+}
+
+.vl-about-photo-wrap {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.vl-about-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.vl-about-email {
+  display: block;
+  text-align: center;
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: 1rem;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.vl-about-email:hover {
+  text-decoration: underline;
+}
+
+/* ===== Extended Description ===== */
+.vl-extended {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 4rem auto;
+  padding-inline-end: 2rem;
+  border-inline-end: 2px solid var(--black);
+}
+
+.vl-extended-text {
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.9;
+  text-align: start;
+}
+
+/* ===== On View ===== */
+.vl-on-view {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 4rem 0 2rem;
+}
+
+.vl-on-view-he {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.vl-on-view-en {
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 700;
+  display: block;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .vl {
+    padding: 2rem 1.25rem;
+  }
+
+  .vl-shape {
+    display: none;
+  }
+
+  .vl-hero {
+    padding: 1rem 0;
+  }
+
+  .vl-desc,
+  .vl-extended {
+    margin: 2rem auto;
+  }
+
+  .vl-about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .vl-featured-embed {
+    padding-top: 56.25%;
+  }
+
+  .vl-now-section {
+    margin: 2rem 0;
+  }
+
+  .vl-on-view {
+    margin: 2rem 0 1rem;
+  }
+}

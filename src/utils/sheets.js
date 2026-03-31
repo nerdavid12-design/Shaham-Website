@@ -110,6 +110,14 @@ export async function fetchVideos() {
       month: row['month'] || row['חודש'] || '',
       month_en: row['month_en'] || '',
       month_ar: row['month_ar'] || '',
+      artist_bio: row['artist_bio'] || '',
+      artist_bio_en: row['artist_bio_en'] || '',
+      artist_bio_ar: row['artist_bio_ar'] || '',
+      artist_photo: driveImageUrl(row['artist_photo'] || ''),
+      artist_email: row['artist_email'] || '',
+      year: row['year'] || '',
+      duration: row['duration'] || '',
+      featured: (row['featured'] || '').toUpperCase() === 'TRUE',
     })).filter(v => v.youtubeId)
   } catch (e) {
     console.error('Failed to fetch videos:', e)
