@@ -11,7 +11,7 @@ const translations = {
     // Home
     'home.tagline': 'מרחב ירושלמי לאמנות ניסיונית',
     'home.gallery.title': 'מפרויקטים ואירועים',
-    'home.gallery.heading': 'פרויקטים בעבר בהווה',
+    'home.gallery.heading': '״פרויקטים בעבר ובהווה״',
     'home.gallery.empty': 'תמונות מפרויקטים ואירועים יתווספו בקרוב',
 
     // Video
