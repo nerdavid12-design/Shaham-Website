@@ -113,6 +113,15 @@
   display: block;
 }
 
+/* ===== Gallery Heading ===== */
+.gallery-heading {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
 /* ===== Gallery ===== */
 .gallery {
   display: grid;

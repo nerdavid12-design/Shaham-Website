@@ -83,6 +83,7 @@ function Home() {
 
       {/* Gallery Section */}
       <section className="page">
+        <h2 className="gallery-heading">{t('home.gallery.heading')}</h2>
         <div className="gallery">
           {posters.map((poster) => (
             <div

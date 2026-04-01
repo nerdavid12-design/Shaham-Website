@@ -11,6 +11,7 @@ const translations = {
     // Home
     'home.tagline': 'מרחב ירושלמי לאמנות ניסיונית',
     'home.gallery.title': 'מפרויקטים ואירועים',
+    'home.gallery.heading': 'פרויקטים בעבר בהווה',
     'home.gallery.empty': 'תמונות מפרויקטים ואירועים יתווספו בקרוב',
 
     // Video
@@ -69,6 +70,7 @@ const translations = {
     // Home
     'home.tagline': 'A Jerusalem Space for Experimental Art',
     'home.gallery.title': 'Projects & Events',
+    'home.gallery.heading': 'Past and Present Projects',
     'home.gallery.empty': 'Project and event photos will be added soon',
 
     // Video
@@ -127,6 +129,7 @@ const translations = {
     // Home
     'home.tagline': 'حيز قدسي للفن التجريبي',
     'home.gallery.title': 'من المشاريع والفعاليات',
+    'home.gallery.heading': 'مشاريع في الماضي والحاضر',
     'home.gallery.empty': 'ستُضاف صور من المشاريع والفعاليات قريباً',
 
     // Video
