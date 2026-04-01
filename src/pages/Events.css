@@ -30,7 +30,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.76rem;
   color: var(--gray-mid);
   font-weight: 500;
 }
@@ -63,7 +63,7 @@
   color: var(--white);
   border: none;
   border-bottom: 2px solid var(--white);
-  font-size: 2.2rem;
+  font-size: 1.76rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
