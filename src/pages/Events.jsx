@@ -151,9 +151,6 @@ function Events() {
     >
     <div className="events-page" ref={pageRef}>
       <div className="page events-inner">
-        <h1 className="page-title">{t('events.title')}</h1>
-        <div className="divider"></div>
-
         {loading ? (
           <p className="loading-text">{t('loading')}</p>
         ) : upcoming.length > 0 ? (
