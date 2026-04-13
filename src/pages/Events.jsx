@@ -166,7 +166,7 @@ function Events() {
                   <h2 className="event-title">{localize(event, 'title')}</h2>
                   {event.description && (
                     <div className="event-description">
-                      {localize(event, 'description').split('\n').map((line, i) => (
+                      {localize(event, 'description').replace(/\u00A0/g, ' ').split('\n').map((line, i) => (
                         <span key={i}>{line}<br /></span>
                       ))}
                     </div>
