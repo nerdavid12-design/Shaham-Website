@@ -165,7 +165,11 @@ function Events() {
                   </div>
                   <h2 className="event-title">{localize(event, 'title')}</h2>
                   {event.description && (
-                    <p className="event-description">{localize(event, 'description')}</p>
+                    <div className="event-description">
+                      {localize(event, 'description').split('\n').map((line, i) => (
+                        <span key={i}>{line}<br /></span>
+                      ))}
+                    </div>
                   )}
                   {openFormId === event.id ? (
                     <EventSignupForm
