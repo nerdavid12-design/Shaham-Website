@@ -16,7 +16,7 @@ const navKeys = [
   { path: '/events', key: 'nav.events' },
 ]
 
-const langs = ['he', 'en', 'ar']
+const langs = ['he', 'en']
 
 function App() {
   const location = useLocation()
