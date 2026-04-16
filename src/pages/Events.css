@@ -58,10 +58,11 @@
 }
 
 .event-directions {
-  display: inline-block;
+  display: block;
+  text-align: center;
   margin-bottom: 0.75rem;
   color: var(--white);
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
