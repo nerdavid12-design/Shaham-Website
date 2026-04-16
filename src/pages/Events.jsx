@@ -233,6 +233,15 @@ function Events() {
             </div>
           </>
         )}
+
+        <div className="events-map">
+          <iframe
+            title="venue-map"
+            src="https://maps.google.com/maps?q=מאיר+שחם+5+ירושלים&output=embed"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
     </div>
