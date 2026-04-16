@@ -6,7 +6,7 @@ import useSplitTextAnimation from '../hooks/useSplitTextAnimation'
 import './Events.css'
 
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwINSpMMANfk0ao9XGGxVLC1nWeCi2KtAT1EdUd0QQ__avb6eWtPsJbzjt-0vVJ0EKPfg/exec'
-const MAPS_URL = 'https://maps.app.goo.gl/qMYwZhrFUjusnfoU7'
+
 
 function EventSignupForm({ event, t, onClose }) {
   const [form, setForm] = useState({ name: '', email: '', phone: '', guests: '1', promoConsent: false })
@@ -177,11 +177,6 @@ function Events() {
                       <span className="event-location">{localize(event, 'location')}</span>
                     )}
                   </div>
-                  {event.location && (
-                    <a className="event-directions" href={MAPS_URL} target="_blank" rel="noopener noreferrer">
-                      {t('events.directions')}
-                    </a>
-                  )}
                   <h2 className="event-title">{localize(event, 'title')}</h2>
                   {event.description && (
                     <div className="event-description">
@@ -237,7 +232,7 @@ function Events() {
         <div className="events-map">
           <iframe
             title="venue-map"
-            src="https://maps.google.com/maps?q=מאיר+שחם+5+ירושלים&output=embed"
+            src="https://maps.google.com/maps?q=שחם+מעבדת+תרבות&output=embed"
             allowFullScreen
             loading="lazy"
           />
