@@ -57,6 +57,19 @@
   white-space: pre-line;
 }
 
+.event-directions {
+  margin-inline-start: 0.6rem;
+  color: var(--gray-mid);
+  font-size: 0.85em;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+
+.event-directions:hover {
+  color: var(--white);
+}
+
 .event-signup-btn {
   display: inline-block;
   padding: 0;

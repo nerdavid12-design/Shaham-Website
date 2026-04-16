@@ -6,6 +6,7 @@ import useSplitTextAnimation from '../hooks/useSplitTextAnimation'
 import './Events.css'
 
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwINSpMMANfk0ao9XGGxVLC1nWeCi2KtAT1EdUd0QQ__avb6eWtPsJbzjt-0vVJ0EKPfg/exec'
+const MAPS_URL = 'https://maps.app.goo.gl/qMYwZhrFUjusnfoU7'
 
 function EventSignupForm({ event, t, onClose }) {
   const [form, setForm] = useState({ name: '', email: '', phone: '', guests: '1', promoConsent: false })
@@ -172,7 +173,14 @@ function Events() {
                   <div className="event-meta">
                     {event.date && <span className="event-date">{formatDate(event.date)}</span>}
                     {event.time && <span className="event-time">{event.time}</span>}
-                    {event.location && <span className="event-location">{localize(event, 'location')}</span>}
+                    {event.location && (
+                      <span className="event-location">
+                        {localize(event, 'location')}
+                        <a className="event-directions" href={MAPS_URL} target="_blank" rel="noopener noreferrer">
+                          {t('events.directions')}
+                        </a>
+                      </span>
+                    )}
                   </div>
                   <h2 className="event-title">{localize(event, 'title')}</h2>
                   {event.description && (
