@@ -8,11 +8,12 @@ import './Events.css'
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwINSpMMANfk0ao9XGGxVLC1nWeCi2KtAT1EdUd0QQ__avb6eWtPsJbzjt-0vVJ0EKPfg/exec'
 
 function EventSignupForm({ event, t, onClose }) {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', guests: '1' })
+  const [form, setForm] = useState({ name: '', email: '', phone: '', guests: '1', promoConsent: false })
   const [status, setStatus] = useState('idle') // idle | sending | success | error
 
   function handleChange(e) {
-    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
+    setForm(prev => ({ ...prev, [e.target.name]: value }))
   }
 
   async function handleSubmit(e) {
@@ -33,6 +34,7 @@ function EventSignupForm({ event, t, onClose }) {
           email: form.email,
           phone: form.phone,
           guests: form.guests,
+          promoConsent: form.promoConsent,
         }),
       })
       setStatus('success')
@@ -85,6 +87,15 @@ function EventSignupForm({ event, t, onClose }) {
         value={form.guests}
         onChange={handleChange}
       />
+      <label className="event-form-checkbox">
+        <input
+          name="promoConsent"
+          type="checkbox"
+          checked={form.promoConsent}
+          onChange={handleChange}
+        />
+        {t('events.promo.consent')}
+      </label>
       <button type="submit" className="event-form-submit" disabled={status === 'sending'}>
         {status === 'sending' ? t('events.signup.sending') : t('events.signup')}
       </button>
