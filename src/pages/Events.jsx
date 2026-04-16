@@ -174,14 +174,14 @@ function Events() {
                     {event.date && <span className="event-date">{formatDate(event.date)}</span>}
                     {event.time && <span className="event-time">{event.time}</span>}
                     {event.location && (
-                      <span className="event-location">
-                        {localize(event, 'location')}
-                        <a className="event-directions" href={MAPS_URL} target="_blank" rel="noopener noreferrer">
-                          {t('events.directions')}
-                        </a>
-                      </span>
+                      <span className="event-location">{localize(event, 'location')}</span>
                     )}
                   </div>
+                  {event.location && (
+                    <a className="event-directions" href={MAPS_URL} target="_blank" rel="noopener noreferrer">
+                      {t('events.directions')}
+                    </a>
+                  )}
                   <h2 className="event-title">{localize(event, 'title')}</h2>
                   {event.description && (
                     <div className="event-description">
