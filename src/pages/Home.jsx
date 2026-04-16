@@ -120,6 +120,15 @@ function Home() {
           ))}
         </div>
       </section>
+
+      <div className="home-map">
+        <iframe
+          title="venue-map"
+          src="https://maps.google.com/maps?q=שחם+מעבדת+תרבות&output=embed"
+          allowFullScreen
+          loading="lazy"
+        />
+      </div>
     </div>
     </PageTransition>
   )
