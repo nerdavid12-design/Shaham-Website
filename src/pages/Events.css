@@ -14,7 +14,7 @@
 }
 
 .events-inner {
-  background: transparent !important;
+  background: var(--black) !important;
   position: relative;
   z-index: 1;
 }
