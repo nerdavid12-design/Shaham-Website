@@ -153,14 +153,25 @@ function Events() {
     }
   }
 
-  const bgImage = events[0]?.imageUrl || ''
+  const bgUrl = events[0]?.imageUrl || ''
+  const bgIsVideo = /\.(mp4|webm|ogg)(\?|$)/i.test(bgUrl)
 
   return (
     <PageTransition>
     <div
       className="events-bg"
-      style={bgImage ? { backgroundImage: `url(${bgImage})` } : {}}
+      style={!bgIsVideo && bgUrl ? { backgroundImage: `url(${bgUrl})` } : {}}
     >
+      {bgIsVideo && (
+        <video
+          className="events-bg-video"
+          src={bgUrl}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      )}
     <div className="events-page" ref={pageRef}>
       <div className="page events-inner">
         {loading ? (
