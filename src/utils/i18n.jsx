@@ -42,7 +42,7 @@ const translations = {
     // Events
     'nav.events': 'אירועים',
     'events.title': 'אירועים',
-    'events.signup': 'הרשמה',
+    'events.signup': 'להרשמה לאירוע',
     'events.signup.success': 'נרשמת בהצלחה!',
     'events.signup.error': 'שגיאה בהרשמה, נסו שוב.',
     'events.signup.sending': 'שולח...',
