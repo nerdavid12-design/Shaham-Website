@@ -92,7 +92,8 @@
 }
 
 .event-signup-btn {
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
   padding: 0;
   background: transparent;
   color: var(--white);
@@ -103,6 +104,12 @@
   font-family: inherit;
   cursor: pointer;
   transition: opacity 0.2s;
+}
+
+.event-signup-btn-meta {
+  display: inline;
+  margin: 0;
+  font-size: 1.76rem;
 }
 
 .event-signup-btn:hover {
