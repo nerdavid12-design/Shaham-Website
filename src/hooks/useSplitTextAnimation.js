@@ -16,6 +16,7 @@ export default function useSplitTextAnimation(deps = []) {
   const ref = useRef(null)
 
   useEffect(() => {
+    return // animation disabled
     if (!ref.current) return
     const targets = ref.current.querySelectorAll('h1, h2, h3, p')
     const splits = []
