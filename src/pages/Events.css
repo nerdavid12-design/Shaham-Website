@@ -44,7 +44,8 @@
   font-size: 1.75rem;
   font-weight: 900;
   margin-bottom: 0.75rem;
-  text-align: center;
+  text-align: center !important;
+  width: 100%;
 }
 
 .event-description {
