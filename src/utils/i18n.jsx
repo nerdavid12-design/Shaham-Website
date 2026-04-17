@@ -42,6 +42,8 @@ const translations = {
     // Events
     'nav.events': 'אירועים',
     'nav.weekends': 'סופי שבוע בשחם',
+    'weekends.subtitle': 'מפגשי מוזיקה וויז׳ואל בשחם מעבדת תרבות',
+    'weekends.gallery': 'מהמפגשים הקודמים',
     'events.title': 'אירועים',
     'events.signup': 'להרשמה לאירוע',
     'events.signup.success': 'נרשמת בהצלחה!',
@@ -104,6 +106,8 @@ const translations = {
     // Events
     'nav.events': 'Events',
     'nav.weekends': 'Shaham Weekends',
+    'weekends.subtitle': 'Music & Visuals at Shaham Culture Lab',
+    'weekends.gallery': 'From Past Events',
     'events.title': 'Events',
     'events.signup': 'Sign Up',
     'events.signup.success': 'Successfully registered!',
@@ -166,6 +170,8 @@ const translations = {
     // Events
     'nav.events': 'فعاليات',
     'nav.weekends': 'عطل نهاية الأسبوع في شحام',
+    'weekends.subtitle': 'موسيقى وفيجوال في شحام مختبر ثقافة',
+    'weekends.gallery': 'من الفعاليات السابقة',
     'events.title': 'فعاليات',
     'events.signup': 'التسجيل',
     'events.signup.success': 'تم التسجيل بنجاح!',

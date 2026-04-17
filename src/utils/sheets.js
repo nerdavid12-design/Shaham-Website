@@ -203,6 +203,25 @@ export async function fetchEvents() {
   }
 }
 
+export async function fetchWeekends() {
+  if (!SHEET_ID) return []
+  try {
+    const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=Weekends`
+    const res = await fetch(url)
+    const csv = await res.text()
+    const rows = csvToArray(csv)
+    return rows.map((row, i) => ({
+      id: i + 1,
+      title: row['title'] || '',
+      imageUrl: driveImageUrl(row['image_url'] || ''),
+      videoUrl: row['video_url'] ? driveVideoUrl(row['video_url']) : '',
+    })).filter(w => w.imageUrl || w.videoUrl)
+  } catch (e) {
+    console.error('Failed to fetch weekends:', e)
+    return []
+  }
+}
+
 export async function fetchPosters() {
   if (!SHEET_ID) return []
   try {
