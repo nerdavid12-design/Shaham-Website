@@ -70,6 +70,14 @@ function Home() {
     <div className="home" ref={pageRef}>
       {/* Hero with animated logo over still image */}
       <section className="hero">
+        <video
+          className="hero-video"
+          src="/assets/hero-video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <AnimatedLogo />
