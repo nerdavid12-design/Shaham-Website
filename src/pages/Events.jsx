@@ -187,11 +187,6 @@ function Events() {
                     {event.location && (
                       <span className="event-location">{localize(event, 'location')}</span>
                     )}
-                    {openFormId !== event.id && (
-                      <button className="event-signup-btn event-signup-btn-meta" onClick={() => setOpenFormId(event.id)}>
-                        {t('events.signup')}
-                      </button>
-                    )}
                   </div>
                   <h2 className="event-title" dir="auto">{localize(event, 'title')}</h2>
                   {event.description && (
