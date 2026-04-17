@@ -9,7 +9,7 @@ const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwINSpMMANfk0ao
 
 
 function EventSignupForm({ event, t, onClose }) {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', guests: '1', promoConsent: false })
+  const [form, setForm] = useState({ name: '', email: '', phone: '', guests: '1', promoConsent: true })
   const [status, setStatus] = useState('idle') // idle | sending | success | error
 
   function handleChange(e) {
