@@ -41,6 +41,7 @@ const translations = {
 
     // Events
     'nav.events': 'אירועים',
+    'nav.weekends': 'סופי שבוע בשחם',
     'events.title': 'אירועים',
     'events.signup': 'להרשמה לאירוע',
     'events.signup.success': 'נרשמת בהצלחה!',
@@ -102,6 +103,7 @@ const translations = {
 
     // Events
     'nav.events': 'Events',
+    'nav.weekends': 'Shaham Weekends',
     'events.title': 'Events',
     'events.signup': 'Sign Up',
     'events.signup.success': 'Successfully registered!',
@@ -163,6 +165,7 @@ const translations = {
 
     // Events
     'nav.events': 'فعاليات',
+    'nav.weekends': 'عطل نهاية الأسبوع في شحام',
     'events.title': 'فعاليات',
     'events.signup': 'التسجيل',
     'events.signup.success': 'تم التسجيل بنجاح!',

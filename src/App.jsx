@@ -6,6 +6,7 @@ import Video from './pages/Video'
 import About from './pages/About'
 import NowShowing from './pages/NowShowing'
 import Events from './pages/Events'
+import Weekends from './pages/Weekends'
 import { useLang } from './utils/i18n'
 import './App.css'
 
@@ -14,6 +15,7 @@ const navKeys = [
   { path: '/video', key: 'nav.video' },
   { path: '/now', key: 'nav.now' },
   { path: '/events', key: 'nav.events' },
+  { path: '/weekends', key: 'nav.weekends' },
 ]
 
 const langs = ['he', 'en']
@@ -95,6 +97,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/now" element={<NowShowing />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/weekends" element={<Weekends />} />
           </Routes>
         </AnimatePresence>
       </main>

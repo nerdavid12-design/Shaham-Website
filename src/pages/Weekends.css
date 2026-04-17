@@ -1,0 +1,10 @@
+.weekends-page {
+  min-height: 80vh;
+}
+
+.weekends-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  text-align: center;
+}
