@@ -5,7 +5,7 @@ import PageTransition from '../components/PageTransition'
 import useSplitTextAnimation from '../hooks/useSplitTextAnimation'
 import './Events.css'
 
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzZKdw64Dw16_Jl-0HXktjiXk9mGunVODgCDf_mjvqa78CAEQRUMDEnsQncbRcfSVe4Wg/exec'
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz-LjwYD71nUK11BxLi3wJuXgtxt006PoKc7X7LSjhqL31fw_PtQIyhXGQe3uOFlwpmfA/exec'
 
 
 function EventSignupForm({ event, t, onClose }) {
