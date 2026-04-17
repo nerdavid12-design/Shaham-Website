@@ -191,9 +191,15 @@ function Events() {
                   <h2 className="event-title" dir="auto">{localize(event, 'title')}</h2>
                   {event.description && (
                     <div className="event-description">
-                      {localize(event, 'description').replace(/\u00A0/g, ' ').split('\n').map((line, i) => (
-                        <span key={i}>{line}<br /></span>
-                      ))}
+                      {(() => {
+                        const lines = localize(event, 'description').replace(/\u00A0/g, ' ').split('\n')
+                        let firstNonEmpty = true
+                        return lines.map((line, i) => {
+                          const isSubtitle = firstNonEmpty && line.trim()
+                          if (isSubtitle) firstNonEmpty = false
+                          return <span key={i} className={isSubtitle ? 'event-description-subtitle' : ''}>{line}<br /></span>
+                        })
+                      })()}
                     </div>
                   )}
                   {openFormId === event.id ? (

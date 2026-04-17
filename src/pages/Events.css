@@ -68,7 +68,7 @@
   white-space: pre-line;
 }
 
-.event-description span:first-child {
+.event-description-subtitle {
   display: block;
   text-align: center;
   font-size: 1.62rem;
