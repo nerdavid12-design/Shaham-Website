@@ -68,6 +68,16 @@
   white-space: pre-line;
 }
 
+.event-description span:first-child {
+  display: block;
+  text-align: center;
+  font-size: 1.62rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+  white-space: pre-line;
+}
+
 .event-directions {
   display: block;
   text-align: center;
