@@ -23,7 +23,7 @@ function Weekends() {
 
           {/* Signup section */}
           <div className="weekends-signup-section">
-            <h1 className="weekends-title">Jazz & Visuals</h1>
+            <h1 className="weekends-title" dir="ltr">Jazz & Visuals</h1>
             <p className="weekends-subtitle">{t('weekends.subtitle')}</p>
             {showForm ? (
               <SignupForm
