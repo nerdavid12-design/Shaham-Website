@@ -15,7 +15,7 @@ const navKeys = [
   { path: '/video', key: 'nav.video' },
   { path: '/now', key: 'nav.now' },
   { path: '/events', key: 'nav.events' },
-  { path: '/weekends', key: 'nav.weekends' },
+  // { path: '/weekends', key: 'nav.weekends' },
 ]
 
 const langs = ['he', 'en']
