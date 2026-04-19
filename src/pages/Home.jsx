@@ -1,42 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { fetchPosters } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import PageTransition from '../components/PageTransition'
 import useSplitTextAnimation from '../hooks/useSplitTextAnimation'
 import './Home.css'
-
-// Echo offsets: center + 4 copies on each side
-const ECHO_COUNT = 4 // copies on each side
-const echoes = Array.from({ length: ECHO_COUNT * 2 + 1 }, (_, i) => i - ECHO_COUNT)
-// [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-
-function AnimatedLogo() {
-  const [animate, setAnimate] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setAnimate(true), 100)
-    return () => clearTimeout(timer)
-  }, [])
-
-  return (
-    <div className={`logo-anim ${animate ? 'logo-anim-active' : ''}`}>
-      <div className="logo-echo-wrap">
-        {echoes.map((offset) => (
-          <div
-            key={offset}
-            className={`logo-echo ${offset === 0 ? 'logo-echo-center' : 'logo-echo-side'}`}
-            style={{
-              '--offset': offset,
-              '--abs': Math.abs(offset),
-            }}
-          >
-            <img src="/assets/shaham-icon.png" alt="" className="logo-echo-img" />
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
 
 function Home() {
   const { t, lang } = useLang()
@@ -70,10 +37,18 @@ function Home() {
     <div className="home" ref={pageRef}>
       {/* Hero with animated logo over still image */}
       <section className="hero">
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/assets/hero-bg.jpg"
+        >
+          <source src="/assets/hero-video.mp4" type="video/mp4" />
+        </video>
         <div className="hero-overlay"></div>
-        <div className="hero-content">
-          <AnimatedLogo />
-        </div>
       </section>
 
       {/* About text */}
@@ -120,6 +95,15 @@ function Home() {
           ))}
         </div>
       </section>
+
+      <div className="home-map">
+        <iframe
+          title="venue-map"
+          src="https://maps.google.com/maps?q=שחם+מעבדת+תרבות&output=embed"
+          allowFullScreen
+          loading="lazy"
+        />
+      </div>
     </div>
     </PageTransition>
   )
