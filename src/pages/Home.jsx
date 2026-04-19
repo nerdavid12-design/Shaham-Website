@@ -39,12 +39,15 @@ function Home() {
       <section className="hero">
         <video
           className="hero-video"
-          src="/assets/hero-video.mp4"
           autoPlay
           muted
           loop
           playsInline
-        />
+          preload="auto"
+          poster="/assets/hero-bg.jpg"
+        >
+          <source src="/assets/hero-video.mp4" type="video/mp4" />
+        </video>
         <div className="hero-overlay"></div>
       </section>
 

@@ -305,6 +305,12 @@
     display: none;
   }
 
+  .hero {
+    background-image: url('/assets/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
   .logo-anim {
     gap: 0.75rem;
   }
