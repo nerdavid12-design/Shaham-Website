@@ -179,6 +179,32 @@
   line-height: 1.9;
 }
 
+.video-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.video-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--gray-dark);
+  text-decoration: none;
+  border: 1px solid var(--gray-light);
+  padding: 0.35rem 0.75rem;
+  border-radius: 2rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.video-contact-btn:hover {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
 .video-empty {
   display: flex;
   flex-direction: column;

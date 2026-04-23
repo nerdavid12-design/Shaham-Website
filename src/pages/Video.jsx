@@ -99,6 +99,39 @@ function Video() {
                         <h3 className="video-title">{localize(video, 'title')}</h3>
                         {video.artist && <p className="video-artist">{localize(video, 'artist')}</p>}
                         {video.description && <p className="video-description">{localize(video, 'description')}</p>}
+                        {(video.instagram_handle || video.artist_email) && (
+                          <div className="video-contact">
+                            {video.instagram_handle && (
+                              <a
+                                href={`https://instagram.com/${video.instagram_handle.replace(/^@/, '')}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="video-contact-btn"
+                                aria-label="Instagram"
+                              >
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                  <circle cx="12" cy="12" r="5" />
+                                  <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+                                </svg>
+                                <span>@{video.instagram_handle.replace(/^@/, '')}</span>
+                              </a>
+                            )}
+                            {video.artist_email && (
+                              <a
+                                href={`mailto:${video.artist_email}`}
+                                className="video-contact-btn"
+                                aria-label="Email"
+                              >
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                                  <polyline points="2,4 12,13 22,4" />
+                                </svg>
+                                <span>{video.artist_email}</span>
+                              </a>
+                            )}
+                          </div>
+                        )}
                       </div>
                     </article>
                   ))}
