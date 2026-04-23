@@ -23,6 +23,8 @@ const translations = {
     'video.about_artist': 'על האמן',
     'video.on_view': 'מוצג',
     'video.on_view_en': 'ON VIEW',
+    'video.now_showing': 'עכשיו מוצג',
+    'video.past_works': 'עבודות קודמות',
 
     // About
     'about.title': 'אודות',
@@ -87,6 +89,8 @@ const translations = {
     'video.about_artist': 'About the Artist',
     'video.on_view': 'On View',
     'video.on_view_en': 'ON VIEW',
+    'video.now_showing': 'Now Showing',
+    'video.past_works': 'Past Works',
 
     // About
     'about.title': 'About',
@@ -151,6 +155,8 @@ const translations = {
     'video.about_artist': 'عن الفنان',
     'video.on_view': 'معروض',
     'video.on_view_en': 'ON VIEW',
+    'video.now_showing': 'معروض الآن',
+    'video.past_works': 'الأعمال السابقة',
 
     // About
     'about.title': 'حول',

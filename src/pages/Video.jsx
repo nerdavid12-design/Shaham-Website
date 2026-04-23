@@ -65,79 +65,131 @@ function Video() {
         <p className="loading-text">{t('loading')}</p>
       ) : videos.length > 0 ? (
         <div className="video-sections">
-          <h2 className="video-year-header">2026</h2>
           {(() => {
-            const groups = []
-            let currentMonth = null
-            let currentGroup = []
-            videos.forEach((video) => {
-              if (video.month !== currentMonth) {
-                if (currentGroup.length > 0) groups.push({ month: currentMonth, videos: currentGroup })
-                currentMonth = video.month
-                currentGroup = [video]
-              } else {
-                currentGroup.push(video)
-              }
-            })
-            if (currentGroup.length > 0) groups.push({ month: currentMonth, videos: currentGroup })
-            return groups.map(({ month, videos: groupVideos }) => (
-              <div key={month} className="video-month-group">
-                {month && <h3 className="video-month-header">{localize({ month, month_en: groupVideos[0]?.month_en, month_ar: groupVideos[0]?.month_ar }, 'month')}</h3>}
-                <div className="video-grid">
-                  {groupVideos.map((video) => (
-                    <article key={video.id} className="video-card">
-                      <div className="video-embed">
-                        <iframe
-                          src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                          title={video.title}
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        ></iframe>
-                      </div>
-                      <div className="video-info">
-                        <h3 className="video-title">{localize(video, 'title')}</h3>
-                        {video.artist && <p className="video-artist">{localize(video, 'artist')}</p>}
-                        {video.description && <p className="video-description">{localize(video, 'description')}</p>}
-                        {(video.instagram_handle || video.artist_email) && (
-                          <div className="video-contact">
-                            {video.instagram_handle && (
-                              <a
-                                href={`https://instagram.com/${video.instagram_handle.replace(/^@/, '')}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="video-contact-btn"
-                                aria-label="Instagram"
-                              >
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                  <circle cx="12" cy="12" r="5" />
-                                  <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
-                                </svg>
-                                <span>@{video.instagram_handle.replace(/^@/, '')}</span>
-                              </a>
-                            )}
-                            {video.artist_email && (
-                              <a
-                                href={`mailto:${video.artist_email}`}
-                                className="video-contact-btn"
-                                aria-label="Email"
-                              >
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                  <rect x="2" y="4" width="20" height="16" rx="2" />
-                                  <polyline points="2,4 12,13 22,4" />
-                                </svg>
-                                <span>{video.artist_email}</span>
-                              </a>
+            const featuredVideos = videos.filter(v => v.featured)
+            const pastVideos = videos.filter(v => !v.featured)
+
+            return (
+              <>
+                {featuredVideos.length > 0 && (
+                  <div className="video-featured-section">
+                    <h2 className="video-section-header">{t('video.now_showing')}</h2>
+                    <div className="video-grid">
+                      {featuredVideos.map((video) => (
+                        <article key={video.id} className="video-card">
+                          <div className="video-embed">
+                            <iframe
+                              src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                              title={video.title}
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            ></iframe>
+                          </div>
+                          <div className="video-info">
+                            <h3 className="video-title">{localize(video, 'title')}</h3>
+                            {video.artist && <p className="video-artist">{localize(video, 'artist')}</p>}
+                            {video.description && <p className="video-description">{localize(video, 'description')}</p>}
+                            {(video.instagram_handle || video.artist_email) && (
+                              <div className="video-contact">
+                                {video.instagram_handle && (
+                                  <a
+                                    href={`https://instagram.com/${video.instagram_handle.replace(/^@/, '')}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="video-contact-btn"
+                                    aria-label="Instagram"
+                                  >
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                      <circle cx="12" cy="12" r="5" />
+                                      <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+                                    </svg>
+                                    <span>@{video.instagram_handle.replace(/^@/, '')}</span>
+                                  </a>
+                                )}
+                                {video.artist_email && (
+                                  <a
+                                    href={`mailto:${video.artist_email}`}
+                                    className="video-contact-btn"
+                                    aria-label="Email"
+                                  >
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                                      <polyline points="2,4 12,13 22,4" />
+                                    </svg>
+                                    <span>{video.artist_email}</span>
+                                  </a>
+                                )}
+                              </div>
                             )}
                           </div>
-                        )}
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            ))
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {pastVideos.length > 0 && (
+                  <div className="video-past-section">
+                    <h2 className="video-section-header">{t('video.past_works')}</h2>
+                    <div className="video-grid">
+                      {pastVideos.map((video) => (
+                        <article key={video.id} className="video-card">
+                          <div className="video-embed">
+                            <iframe
+                              src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                              title={video.title}
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            ></iframe>
+                          </div>
+                          <div className="video-info">
+                            <h3 className="video-title">{localize(video, 'title')}</h3>
+                            {video.artist && <p className="video-artist">{localize(video, 'artist')}</p>}
+                            {video.description && <p className="video-description">{localize(video, 'description')}</p>}
+                            {(video.instagram_handle || video.artist_email) && (
+                              <div className="video-contact">
+                                {video.instagram_handle && (
+                                  <a
+                                    href={`https://instagram.com/${video.instagram_handle.replace(/^@/, '')}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="video-contact-btn"
+                                    aria-label="Instagram"
+                                  >
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                      <circle cx="12" cy="12" r="5" />
+                                      <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+                                    </svg>
+                                    <span>@{video.instagram_handle.replace(/^@/, '')}</span>
+                                  </a>
+                                )}
+                                {video.artist_email && (
+                                  <a
+                                    href={`mailto:${video.artist_email}`}
+                                    className="video-contact-btn"
+                                    aria-label="Email"
+                                  >
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                                      <polyline points="2,4 12,13 22,4" />
+                                    </svg>
+                                    <span>{video.artist_email}</span>
+                                  </a>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </>
+            )
           })()}
         </div>
       ) : (
