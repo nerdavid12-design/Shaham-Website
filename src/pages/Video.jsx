@@ -60,12 +60,6 @@ function Video() {
         </p>
         <p className="page-subtitle">{t('video.subtitle')}</p>
 
-        <div className="video-on-view-banner">
-          <a href="https://www.vidshaham.org/" target="_blank" rel="noopener noreferrer" className="video-on-view-btn">
-            עכשיו מוצג
-          </a>
-        </div>
-
         <div className="divider"></div>
 
       {loading ? (
@@ -80,7 +74,11 @@ function Video() {
               <>
                 {featuredVideos.length > 0 && (
                   <div className="video-featured-section">
-                    <h2 className="video-section-header">{t('video.now_showing')}</h2>
+                    <div className="video-on-view-banner">
+                      <a href="https://www.vidshaham.org/" target="_blank" rel="noopener noreferrer" className="video-on-view-btn">
+                        ON VIEW
+                      </a>
+                    </div>
                     <div className="video-grid">
                       {featuredVideos.map((video) => (
                         <article key={video.id} className="video-card">
