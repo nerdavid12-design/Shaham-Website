@@ -76,7 +76,7 @@ function Video() {
                   <div className="video-featured-section">
                     <div className="video-on-view-banner">
                       <a href="https://www.vidshaham.org/" target="_blank" rel="noopener noreferrer" className="video-on-view-btn">
-                        ON VIEW
+                        ON VIEW NOW
                       </a>
                     </div>
                     <div className="video-grid">
