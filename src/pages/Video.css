@@ -74,33 +74,24 @@
 }
 
 .video-on-view-banner {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
   margin: 1.5rem 0;
-  flex-wrap: wrap;
 }
 
-.video-on-view-label {
-  font-size: 0.75rem;
+.video-on-view-btn {
+  display: inline-block;
+  background: var(--black);
+  color: var(--white);
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--gray-mid);
-}
-
-.video-on-view-link {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--black);
   text-decoration: none;
-  border-bottom: 2px solid var(--black);
-  padding-bottom: 1px;
+  padding: 0.65rem 1.5rem;
   transition: opacity 0.2s;
 }
 
-.video-on-view-link:hover {
-  opacity: 0.5;
+.video-on-view-btn:hover {
+  opacity: 0.7;
 }
 
 .video-sections {

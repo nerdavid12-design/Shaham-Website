@@ -61,9 +61,8 @@ function Video() {
         <p className="page-subtitle">{t('video.subtitle')}</p>
 
         <div className="video-on-view-banner">
-          <span className="video-on-view-label">{t('video.on_view_en')}</span>
-          <a href="https://www.vidshaham.org/" target="_blank" rel="noopener noreferrer" className="video-on-view-link">
-            vidshaham.org
+          <a href="https://www.vidshaham.org/" target="_blank" rel="noopener noreferrer" className="video-on-view-btn">
+            ON VIEW
           </a>
         </div>
 
