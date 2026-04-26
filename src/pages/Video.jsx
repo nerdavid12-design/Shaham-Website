@@ -62,7 +62,7 @@ function Video() {
 
         <div className="video-on-view-banner">
           <a href="https://www.vidshaham.org/" target="_blank" rel="noopener noreferrer" className="video-on-view-btn">
-            ON VIEW
+            עכשיו מוצג
           </a>
         </div>
 
