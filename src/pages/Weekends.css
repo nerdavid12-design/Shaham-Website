@@ -4,7 +4,7 @@
   color: var(--white);
 }
 
-.weekends-signup-section {
+.weekends-header {
   text-align: center;
   padding: 4rem 0 3rem;
   border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -21,7 +21,57 @@
   font-size: 1.1rem;
   font-weight: 300;
   color: rgba(255,255,255,0.6);
-  margin-bottom: 2rem;
+  margin-bottom: 0;
+}
+
+/* Program cards */
+.weekends-programs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.weekends-program-card {
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.weekends-program-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.5);
+}
+
+.weekends-program-meta span + span::before {
+  content: '·';
+  margin-right: 0.75rem;
+}
+
+.weekends-program-name {
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.weekends-program-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+  flex: 1;
+  margin: 0;
+}
+
+.weekends-program-card .event-signup-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
 }
 
 .weekends-gallery-title {

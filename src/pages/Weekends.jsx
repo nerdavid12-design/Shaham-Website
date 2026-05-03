@@ -6,10 +6,35 @@ import SignupForm from '../components/SignupForm'
 import useSplitTextAnimation from '../hooks/useSplitTextAnimation'
 import './Weekends.css'
 
+const WEEKEND_PROGRAMS = [
+  {
+    id: 1,
+    name: 'Jazz & Visuals',
+    day: 'חמישי בלילה',
+    time: '20:00–23:00',
+    description: 'מוזיקה מודרנית חיה בשילוב עם אומנות וידאו (VJ) מוקרנים בסנכרון חופשי. הווידאו מגיב באופן חי לאמנים ולמוזיקה שמתנגנת בהופעה.',
+  },
+  {
+    id: 2,
+    name: 'מופעי שישי',
+    day: 'שישי בצהריים',
+    time: '12:00–14:00',
+    description: 'מופע משתנה פתוח לקהל הרחב, סטודנט/ית מהחזותי או בוגרים טריים.',
+  },
+  {
+    id: 3,
+    name: 'מועדון Twin Peaks',
+    day: 'מוצאי שבת',
+    time: '20:00–23:00',
+    description: 'הקרנה שבועית של הסדרה הקלאסית של דיוויד לינץ׳ + דיון קצר. אפשר להצטרף מכל פרק. עונה 1 בקיץ, עונה 2 בהמשך.',
+  },
+]
+
 function Weekends() {
   const { t } = useLang()
   const [media, setMedia] = useState([])
   const [showForm, setShowForm] = useState(false)
+  const [activeSignup, setActiveSignup] = useState(null)
   const pageRef = useSplitTextAnimation([media.length])
 
   useEffect(() => {
@@ -21,21 +46,38 @@ function Weekends() {
       <div className="weekends-page" ref={pageRef}>
         <div className="page">
 
-          {/* Signup section */}
-          <div className="weekends-signup-section">
-            <h1 className="weekends-title" dir="ltr">Jazz & Visuals</h1>
+          {/* Page header */}
+          <div className="weekends-header">
+            <h1 className="weekends-title">{t('nav.weekends')}</h1>
             <p className="weekends-subtitle">{t('weekends.subtitle')}</p>
-            {showForm ? (
-              <SignupForm
-                eventName="Jazz & Visuals"
-                t={t}
-                onClose={() => setShowForm(false)}
-              />
-            ) : (
-              <button className="event-signup-btn" onClick={() => setShowForm(true)}>
-                {t('events.signup')}
-              </button>
-            )}
+          </div>
+
+          {/* Program cards */}
+          <div className="weekends-programs">
+            {WEEKEND_PROGRAMS.map((program) => (
+              <div key={program.id} className="weekends-program-card">
+                <div className="weekends-program-meta">
+                  <span className="weekends-program-day">{program.day}</span>
+                  <span className="weekends-program-time" dir="ltr">{program.time}</span>
+                </div>
+                <h2 className="weekends-program-name" dir="ltr">{program.name}</h2>
+                <p className="weekends-program-desc">{program.description}</p>
+                {activeSignup === program.id ? (
+                  <SignupForm
+                    eventName={program.name}
+                    t={t}
+                    onClose={() => setActiveSignup(null)}
+                  />
+                ) : (
+                  <button
+                    className="event-signup-btn"
+                    onClick={() => setActiveSignup(program.id)}
+                  >
+                    {t('events.signup')}
+                  </button>
+                )}
+              </div>
+            ))}
           </div>
 
           {/* Past events gallery */}
