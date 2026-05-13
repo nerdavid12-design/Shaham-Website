@@ -27,11 +27,18 @@ function Events() {
 
   const pageRef = useSplitTextAnimation([loading])
 
-  // Normalize DD.MM.YYYY → YYYY-MM-DD for comparison and parsing
+  // Normalize various date formats → YYYY-MM-DD for comparison and parsing
   function normalizeDate(dateStr) {
     if (!dateStr) return ''
-    const dotMatch = dateStr.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/)
-    if (dotMatch) return `${dotMatch[3]}-${dotMatch[2].padStart(2, '0')}-${dotMatch[1].padStart(2, '0')}`
+    // Already YYYY-MM-DD
+    if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) return dateStr
+    // DD.MM.YYYY or DD/MM/YYYY or MM/DD/YYYY — deduce order by which part exceeds 12
+    const parts = dateStr.match(/^(\d{1,2})[./](\d{1,2})[./](\d{4})$/)
+    if (parts) {
+      const [, a, b, year] = parts
+      const [day, month] = parseInt(a) > 12 ? [a, b] : parseInt(b) > 12 ? [b, a] : [a, b]
+      return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
+    }
     return dateStr
   }
 
@@ -44,6 +51,7 @@ function Events() {
     try {
       const normalized = normalizeDate(dateStr)
       const d = new Date(normalized + 'T00:00:00')
+      if (isNaN(d.getTime())) return dateStr
       return d.toLocaleDateString(lang === 'ar' ? 'ar-EG' : lang === 'en' ? 'en-US' : 'he-IL', {
         day: 'numeric',
         month: 'long',
