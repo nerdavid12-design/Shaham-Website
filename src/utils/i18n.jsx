@@ -44,6 +44,7 @@ const translations = {
     // Events
     'nav.events': 'אירועים',
     'nav.weekends': 'סופי שבוע בשחם',
+    'weekends.tickets': 'לרכישת כרטיסים',
     'weekends.subtitle': 'מפגשי מוזיקה וויז׳ואל בשחם מעבדת תרבות',
     'weekends.gallery': 'מהמפגשים הקודמים',
     'events.title': 'אירועים',
@@ -110,6 +111,7 @@ const translations = {
     // Events
     'nav.events': 'Events',
     'nav.weekends': 'Shaham Weekends',
+    'weekends.tickets': 'Buy Tickets',
     'weekends.subtitle': 'Music & Visuals at Shaham Culture Lab',
     'weekends.gallery': 'From Past Events',
     'events.title': 'Events',

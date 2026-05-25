@@ -11,13 +11,12 @@ const PROGRAMS = [
     id: 'jazz',
     poster: '/assets/posters/jazz-visuals.jpg',
     posterAlt: 'Jazz & Visualz',
-    description: 'מוזיקה מודרנית חיה בשילוב עם אומנות וידאו (VJ) מוקרנים בסנכרון חופשי. הווידאו מגיב באופן חי לאמנים ולמוזיקה שמתנגנת בהופעה.',
+    ticketUrl: 'https://tickchak.co.il/105310',
   },
   {
     id: 'twinpeaks',
     poster: '/assets/posters/twin-peaks.jpg',
     posterAlt: 'מועדון Twin Peaks',
-    description: 'הקרנה שבועית של הסדרה הקלאסית של דיוויד לינץ׳ + דיון קצר. אפשר להצטרף מכל פרק. עונה 1 בקיץ, עונה 2 בהמשך.',
   },
 ]
 
@@ -46,7 +45,16 @@ function Weekends() {
                 />
               </div>
               <div className="wknd-text">
-                {activeSignup === program.id ? (
+                {program.ticketUrl ? (
+                  <a
+                    href={program.ticketUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="event-signup-btn"
+                  >
+                    {t('weekends.tickets')}
+                  </a>
+                ) : activeSignup === program.id ? (
                   <SignupForm
                     eventName={program.posterAlt}
                     t={t}
