@@ -1,0 +1,108 @@
+.now-bg {
+  background: url('/assets/now-bg.jpg') center/cover no-repeat fixed;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.now-page {
+  background: transparent !important;
+}
+
+.now-items {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.now-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--gray-light);
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+}
+
+.now-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: var(--black);
+}
+
+.now-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.now-instagram-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+
+.now-instagram-wrap .instagram-media {
+  margin: 0 auto !important;
+  max-width: 540px !important;
+  width: 100% !important;
+}
+
+.now-info {
+  padding: 2rem;
+}
+
+.now-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.9;
+  color: var(--gray-dark);
+  margin-bottom: 0.4rem;
+}
+
+.now-artist {
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.9;
+  color: var(--gray-dark);
+  margin-bottom: 1rem;
+}
+
+.now-description {
+  font-size: 1.35rem;
+  color: var(--gray-dark);
+  font-weight: 300;
+  line-height: 1.9;
+}
+
+.now-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 2rem;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--gray-light);
+}
+
+.now-empty-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+}
+
+.now-empty-text {
+  font-size: 1rem;
+  color: var(--gray-mid);
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.loading-text {
+  text-align: center;
+  color: var(--gray-mid);
+  font-weight: 300;
+  padding: 3rem;
+}

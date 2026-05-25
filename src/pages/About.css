@@ -1,0 +1,91 @@
+/* ===== About Hero ===== */
+.about-hero {
+  position: relative;
+  min-height: 50vh;
+  overflow: hidden;
+  background: var(--black);
+}
+
+.about-hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    display: none;
+  }
+}
+
+.about-content {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.about-logo-section {
+  flex-shrink: 0;
+  position: sticky;
+  top: 100px;
+}
+
+.about-logo {
+  height: 180px;
+  width: auto;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-heading {
+  font-size: 1.75rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid var(--black);
+  padding-bottom: 1rem;
+}
+
+.about-subheading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-text p {
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--gray-dark);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .about-logo-section {
+    position: static;
+  }
+
+  .about-logo {
+    height: 120px;
+  }
+}

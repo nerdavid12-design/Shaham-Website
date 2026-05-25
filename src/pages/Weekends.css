@@ -1,0 +1,131 @@
+.weekends-page {
+  background: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+}
+
+/* ===== Program sections ===== */
+.wknd-programs {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+.wknd-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem 3rem;
+  border-left: 1px solid rgba(255,255,255,0.08);
+}
+
+.wknd-section:last-child {
+  border-left: none;
+}
+
+/* Poster */
+.wknd-poster-wrap {
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: 2rem;
+}
+
+.wknd-poster {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Text below poster */
+.wknd-text {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.wknd-desc {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+}
+
+/* ===== Gallery ===== */
+.wknd-gallery-section {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 4rem 0;
+}
+
+.wknd-gallery-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.wknd-gallery-title {
+  font-size: 1.1rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.wknd-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.wknd-media-item {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #111;
+}
+
+.wknd-media-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.wknd-media-item img:hover {
+  transform: scale(1.03);
+}
+
+.wknd-media-item iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .wknd-programs {
+    flex-direction: column;
+  }
+
+  .wknd-section {
+    border-left: none;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 3rem 1.5rem;
+  }
+
+  .wknd-section:last-child {
+    border-bottom: none;
+  }
+
+  .wknd-poster-wrap {
+    max-width: 300px;
+  }
+}
