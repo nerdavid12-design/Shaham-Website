@@ -1,0 +1,11 @@
+.nails-page {
+  height: calc(100vh - 60px);
+  background: var(--black);
+}
+
+.nails-page iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
