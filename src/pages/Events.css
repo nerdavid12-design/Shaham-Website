@@ -1,5 +1,5 @@
 .events-bg {
-  background: var(--black) center/cover no-repeat fixed;
+  background: #E020F0 center/cover no-repeat fixed;
   min-height: 100vh;
   width: 100%;
 }
