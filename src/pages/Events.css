@@ -19,6 +19,19 @@
   z-index: 1;
 }
 
+.featured-event {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.featured-event-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+}
+
 .events-list {
   display: flex;
   flex-direction: column;
