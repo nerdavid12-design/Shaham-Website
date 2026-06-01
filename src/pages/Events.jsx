@@ -69,7 +69,6 @@ function Events() {
     <PageTransition>
     <div
       className="events-bg"
-      style={!bgIsVideo && bgUrl ? { backgroundImage: `url(${bgUrl})` } : {}}
     >
       {bgIsVideo && (
         <video
