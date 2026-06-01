@@ -82,10 +82,6 @@ function Events() {
       )}
     <div className="events-page" ref={pageRef}>
       <div className="page events-inner">
-        <div className="featured-event">
-          <img src="/assets/posters/nails.jpg" alt="NAILS" className="featured-event-image" />
-        </div>
-
         {loading ? (
           <p className="loading-text">{t('loading')}</p>
         ) : upcoming.length > 0 ? (
@@ -114,6 +110,9 @@ function Events() {
                       })()}
                     </div>
                   )}
+                  <div className="featured-event">
+                    <img src="/assets/posters/nails.jpg" alt="NAILS" className="featured-event-image" />
+                  </div>
                   {openFormId === event.id ? (
                     <SignupForm
                       eventName={localize(event, 'title')}
