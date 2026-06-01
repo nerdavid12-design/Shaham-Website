@@ -13,11 +13,11 @@ const PROGRAMS = [
     posterAlt: 'Jazz & Visualz',
     ticketUrl: 'https://tickchak.co.il/105310',
   },
-  // {
-  //   id: 'twinpeaks',
-  //   poster: '/assets/posters/twin-peaks.jpg',
-  //   posterAlt: 'מועדון Twin Peaks',
-  // },
+  {
+    id: 'twinpeaks',
+    poster: '/assets/posters/twin-peaks.jpg',
+    posterAlt: 'מועדון Twin Peaks',
+  },
 ]
 
 function Weekends() {
