@@ -92,13 +92,6 @@ function Events() {
             {upcoming.map((event) => (
               <article key={event.id} className="event-card">
                 <div className="event-content">
-                  <div className="event-meta">
-                    {event.date && <span className="event-date">{formatDate(event.date)}</span>}
-                    {event.location && (
-                      <span className="event-location">{localize(event, 'location')}</span>
-                    )}
-                  </div>
-                  <h2 className="event-title" dir="auto">{localize(event, 'title')}</h2>
                   {event.time && (
                     <div className="event-time-banner">
                       <span className="event-time-banner-time">{event.time}</span>
