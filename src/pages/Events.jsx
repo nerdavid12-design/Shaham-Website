@@ -104,6 +104,14 @@ function Events() {
                       <span className="event-time-banner-time">{event.time}</span>
                     </div>
                   )}
+                  {openFormId !== event.id && (
+                    <button
+                      className="event-signup-btn"
+                      onClick={() => setOpenFormId(event.id)}
+                    >
+                      {t('events.signup')}
+                    </button>
+                  )}
                   {event.description && (
                     <div className="event-description">
                       {(() => {
