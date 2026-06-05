@@ -12,6 +12,15 @@ function Events() {
   const [loading, setLoading] = useState(true)
   const [openFormId, setOpenFormId] = useState(null)
 
+  useEffect(() => {
+    if (openFormId === null) return
+    const timer = setTimeout(() => {
+      const formEl = document.querySelector('.event-form')
+      if (formEl) formEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    }, 50)
+    return () => clearTimeout(timer)
+  }, [openFormId])
+
   function localize(item, field) {
     if (lang === 'en' && item[`${field}_en`]) return item[`${field}_en`]
     if (lang === 'ar' && item[`${field}_ar`]) return item[`${field}_ar`]
