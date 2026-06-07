@@ -108,6 +108,11 @@
   text-align: center;
 }
 
+.event-cta-top {
+  border-top: none;
+  border-bottom: 1px solid #e8d0f0;
+}
+
 /* Purple signup button */
 .event-signup-btn {
   display: inline-block;
