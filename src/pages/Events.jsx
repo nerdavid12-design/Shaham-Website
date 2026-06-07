@@ -100,21 +100,18 @@ function Events() {
           <div className="events-list">
             {upcoming.map((event) => (
               <article key={event.id} className="event-card">
-                <div className="event-content">
-                  {event.time && (
-                    <div className="event-time-banner">
-                      <span className="event-time-banner-time">{event.time}</span>
-                    </div>
-                  )}
-                  {openFormId !== event.id && (
-                    <button
-                      className="event-signup-btn"
-                      onClick={() => setOpenFormId(event.id)}
-                    >
-                      {t('events.signup')}
-                    </button>
-                  )}
-                  {event.description && (
+                {event.imageUrl && !bgIsVideo && (
+                  <div className="event-image">
+                    <img src={event.imageUrl} alt={localize(event, 'title')} />
+                  </div>
+                )}
+                {event.time && (
+                  <div className="event-time-banner">
+                    <span className="event-time-banner-time">{event.time}</span>
+                  </div>
+                )}
+                {event.description && (
+                  <div className="event-body">
                     <div className="event-description">
                       {(() => {
                         const lines = localize(event, 'description').replace(/\u00A0/g, ' ').split('\n')
@@ -126,22 +123,24 @@ function Events() {
                         })
                       })()}
                     </div>
-                  )}
-                  {openFormId === event.id ? (
-                    <SignupForm
-                      eventName={localize(event, 'title')}
-                      t={t}
-                      onClose={() => setOpenFormId(null)}
-                    />
-                  ) : (
+                  </div>
+                )}
+                {openFormId === event.id ? (
+                  <SignupForm
+                    eventName={localize(event, 'title')}
+                    t={t}
+                    onClose={() => setOpenFormId(null)}
+                  />
+                ) : (
+                  <div className="event-cta">
                     <button
                       className="event-signup-btn"
                       onClick={() => setOpenFormId(event.id)}
                     >
                       {t('events.signup')}
                     </button>
-                  )}
-                </div>
+                  </div>
+                )}
               </article>
             ))}
           </div>
