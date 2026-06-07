@@ -100,6 +100,16 @@ function Events() {
           <div className="events-list">
             {upcoming.map((event) => (
               <article key={event.id} className="event-card">
+                {openFormId !== event.id && (
+                  <div className="event-cta event-cta-top">
+                    <button
+                      className="event-signup-btn"
+                      onClick={() => setOpenFormId(event.id)}
+                    >
+                      {t('events.signup')}
+                    </button>
+                  </div>
+                )}
                 {event.time && (
                   <div className="event-time-banner">
                     <span className="event-time-banner-time">{event.time}</span>
