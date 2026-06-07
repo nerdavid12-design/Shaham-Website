@@ -100,11 +100,6 @@ function Events() {
           <div className="events-list">
             {upcoming.map((event) => (
               <article key={event.id} className="event-card">
-                {event.imageUrl && !bgIsVideo && (
-                  <div className="event-image">
-                    <img src={event.imageUrl} alt={localize(event, 'title')} />
-                  </div>
-                )}
                 {event.time && (
                   <div className="event-time-banner">
                     <span className="event-time-banner-time">{event.time}</span>
