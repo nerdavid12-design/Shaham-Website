@@ -19,114 +19,117 @@
   z-index: 1;
 }
 
+/* Poster */
 .featured-event {
-  margin-bottom: 3rem;
+  margin: 2rem auto 3rem;
   display: flex;
   justify-content: center;
+  max-width: 600px;
 }
 
 .featured-event-image {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  max-height: 600px;
-  object-fit: contain;
+  display: block;
 }
 
+/* List */
 .events-list {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 3rem;
+  align-items: center;
 }
 
+/* Newsletter-style white card */
 .event-card {
-  background: rgba(0, 0, 0, 0.75);
+  background: #fff;
+  max-width: 600px;
+  width: 100%;
   overflow: hidden;
+  color: #1a1a1a;
 }
 
-.event-content {
-  padding: 2rem;
+.event-image {
   width: 100%;
-  color: var(--white);
+  line-height: 0;
 }
 
-.event-meta {
+.event-image img {
+  width: 100%;
+  display: block;
+}
+
+/* Purple date/time strip */
+.event-time-banner {
+  background: #b660c0;
+  padding: 14px 2rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  font-size: 1.76rem;
-  color: var(--gray-mid);
-  font-weight: 500;
+  justify-content: center;
+  align-items: center;
 }
 
-.event-date {
-  font-weight: 700;
-  color: var(--white);
-}
-
-.event-title {
-  font-size: 1.75rem;
+.event-time-banner-time {
+  font-size: 2.8rem;
   font-weight: 900;
-  margin-bottom: 0.75rem;
-  text-align: center !important;
-  width: 100%;
+  color: #fff;
+  letter-spacing: 0.05em;
 }
 
+/* Body section */
+.event-body {
+  padding: 1.75rem 2rem;
+}
+
+/* About-box style description */
 .event-description {
-  font-size: 1.35rem;
-  font-weight: 300;
+  border-right: 4px solid #b660c0;
+  background: #fdf5ff;
+  padding: 1.25rem;
+  font-size: 0.95rem;
   line-height: 1.9;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 1.5rem;
+  color: #444;
   white-space: pre-line;
 }
 
 .event-description-subtitle {
   display: block;
-  text-align: center;
-  font-size: 1.62rem;
+  font-size: 1.1rem;
   font-weight: 700;
+  color: #7a2090;
   margin-bottom: 0.5rem;
 }
 
-.event-directions {
-  display: block;
+/* CTA section */
+.event-cta {
+  padding: 1.5rem 2rem;
+  background: #fdf5ff;
+  border-top: 1px solid #e8d0f0;
   text-align: center;
-  margin-bottom: 0.75rem;
-  color: var(--white);
-  font-size: 1.3rem;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
-.event-directions:hover {
-  opacity: 0.7;
+.event-cta-top {
+  border-top: none;
+  border-bottom: 1px solid #e8d0f0;
 }
 
+/* Purple signup button */
 .event-signup-btn {
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  background: transparent;
-  color: var(--white);
+  display: inline-block;
+  padding: 0.8rem 2.25rem;
+  background: #b660c0;
+  color: #fff;
   border: none;
-  border-bottom: 2px solid var(--white);
-  font-size: 1.76rem;
+  font-size: 1rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.event-signup-btn-meta {
-  display: inline;
-  margin: 0;
-  font-size: 1.76rem;
+  letter-spacing: 0.05em;
+  transition: background 0.2s;
 }
 
 .event-signup-btn:hover {
-  opacity: 0.7;
+  background: #9d4fa8;
 }
 
 /* Sign-up form */
@@ -134,23 +137,23 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-top: 1rem;
-  padding: 1.5rem;
-  background: var(--off-white);
-  border: 1px solid var(--gray-light);
+  padding: 1.5rem 2rem;
+  background: #fdf5ff;
+  border-top: 1px solid #e8d0f0;
   position: relative;
 }
 
 .event-form input {
   padding: 0.75rem 1rem;
-  border: 1px solid var(--gray-light);
+  border: 1px solid #ddd;
   font-size: 1rem;
   font-family: inherit;
-  background: var(--white);
+  background: #fff;
+  color: #1a1a1a;
 }
 
 .event-form input:focus {
-  outline: 2px solid var(--black);
+  outline: 2px solid #b660c0;
   outline-offset: -2px;
 }
 
@@ -159,7 +162,7 @@
   align-items: flex-start;
   gap: 0.6rem;
   font-size: 0.9rem;
-  color: var(--black);
+  color: #1a1a1a;
   cursor: pointer;
   line-height: 1.4;
 }
@@ -171,14 +174,14 @@
   height: 1rem;
   cursor: pointer;
   padding: 0;
-  border: 1px solid var(--gray-light);
-  background: var(--white);
+  border: 1px solid #ddd;
+  background: #fff;
 }
 
 .event-form-submit {
   padding: 0.75rem 2rem;
-  background: var(--black);
-  color: var(--white);
+  background: #b660c0;
+  color: #fff;
   border: none;
   font-size: 1.1rem;
   font-weight: 700;
@@ -188,7 +191,7 @@
 }
 
 .event-form-submit:hover {
-  background: #333;
+  background: #9d4fa8;
 }
 
 .event-form-submit:disabled {
@@ -204,7 +207,7 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--gray-mid);
+  color: #888;
   line-height: 1;
   padding: 0.25rem;
 }
@@ -215,15 +218,14 @@
 }
 
 .event-form-success {
-  padding: 1.5rem;
-  background: var(--off-white);
-  border: 1px solid var(--gray-light);
+  padding: 1.5rem 2rem;
+  background: #fdf5ff;
+  border-top: 1px solid #e8d0f0;
   text-align: center;
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--black);
+  color: #1a1a1a;
   position: relative;
-  margin-top: 1rem;
 }
 
 .event-form-error {
@@ -238,10 +240,35 @@
   font-weight: 900;
   margin-top: 4rem;
   margin-bottom: 0.5rem;
+  color: #fff;
 }
 
 .events-past .event-card-past {
   opacity: 0.5;
+}
+
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #888;
+}
+
+.event-date {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.event-title {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #1a1a1a;
+}
+
+.event-card-past .event-content {
+  padding: 1.25rem 2rem;
 }
 
 /* Empty state */
@@ -252,6 +279,7 @@
   justify-content: center;
   text-align: center;
   padding: 5rem 2rem;
+  color: #fff;
 }
 
 .events-empty h2 {
@@ -262,7 +290,7 @@
 
 .events-empty p {
   font-size: 1rem;
-  color: var(--gray-mid);
+  color: #888;
   font-weight: 300;
   line-height: 1.8;
 }
@@ -280,16 +308,20 @@
   display: block;
 }
 
-@media (max-width: 768px) {
-  .event-image {
-    height: 200px;
+@media (max-width: 640px) {
+  .event-time-banner {
+    padding: 12px 1.25rem;
   }
 
-  .event-content {
-    padding: 1.5rem;
+  .event-body {
+    padding: 1.25rem;
   }
 
-  .event-title {
-    font-size: 1.35rem;
+  .event-cta {
+    padding: 1.25rem;
+  }
+
+  .event-form {
+    padding: 1.25rem;
   }
 }

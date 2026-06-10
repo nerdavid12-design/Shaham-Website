@@ -12,6 +12,15 @@ function Events() {
   const [loading, setLoading] = useState(true)
   const [openFormId, setOpenFormId] = useState(null)
 
+  useEffect(() => {
+    if (openFormId === null) return
+    const timer = setTimeout(() => {
+      const formEl = document.querySelector('.event-form')
+      if (formEl) formEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    }, 50)
+    return () => clearTimeout(timer)
+  }, [openFormId])
+
   function localize(item, field) {
     if (lang === 'en' && item[`${field}_en`]) return item[`${field}_en`]
     if (lang === 'ar' && item[`${field}_ar`]) return item[`${field}_ar`]
@@ -82,22 +91,32 @@ function Events() {
       )}
     <div className="events-page" ref={pageRef}>
       <div className="page events-inner">
+        <div className="featured-event">
+          <img src="/assets/posters/nails.jpg" alt="NAILS" className="featured-event-image" />
+        </div>
         {loading ? (
           <p className="loading-text">{t('loading')}</p>
         ) : upcoming.length > 0 ? (
           <div className="events-list">
             {upcoming.map((event) => (
               <article key={event.id} className="event-card">
-                <div className="event-content">
-                  <div className="event-meta">
-                    {event.date && <span className="event-date">{formatDate(event.date)}</span>}
-                    {event.time && <span className="event-time">{event.time}</span>}
-                    {event.location && (
-                      <span className="event-location">{localize(event, 'location')}</span>
-                    )}
+                {openFormId !== event.id && (
+                  <div className="event-cta event-cta-top">
+                    <button
+                      className="event-signup-btn"
+                      onClick={() => setOpenFormId(event.id)}
+                    >
+                      {t('events.signup')}
+                    </button>
                   </div>
-                  <h2 className="event-title" dir="auto">{localize(event, 'title')}</h2>
-                  {event.description && (
+                )}
+                {event.time && (
+                  <div className="event-time-banner">
+                    <span className="event-time-banner-time">{event.time}</span>
+                  </div>
+                )}
+                {event.description && (
+                  <div className="event-body">
                     <div className="event-description">
                       {(() => {
                         const lines = localize(event, 'description').replace(/\u00A0/g, ' ').split('\n')
@@ -109,25 +128,24 @@ function Events() {
                         })
                       })()}
                     </div>
-                  )}
-                  <div className="featured-event">
-                    <img src="/assets/posters/nails.jpg" alt="NAILS" className="featured-event-image" />
                   </div>
-                  {openFormId === event.id ? (
-                    <SignupForm
-                      eventName={localize(event, 'title')}
-                      t={t}
-                      onClose={() => setOpenFormId(null)}
-                    />
-                  ) : (
+                )}
+                {openFormId === event.id ? (
+                  <SignupForm
+                    eventName={localize(event, 'title')}
+                    t={t}
+                    onClose={() => setOpenFormId(null)}
+                  />
+                ) : (
+                  <div className="event-cta">
                     <button
                       className="event-signup-btn"
                       onClick={() => setOpenFormId(event.id)}
                     >
                       {t('events.signup')}
                     </button>
-                  )}
-                </div>
+                  </div>
+                )}
               </article>
             ))}
           </div>
