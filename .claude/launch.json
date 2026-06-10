@@ -6,7 +6,7 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["vite", "--port", "5174"],
       "port": 5174,
-      "cwd": "/Users/adinner-david/Code /Shaham-Website-main"
+      "cwd": "/Volumes/Crucial X9/Code /Shaham-Website-main"
     }
   ]
 }

@@ -7,16 +7,15 @@ import useSplitTextAnimation from '../hooks/useSplitTextAnimation'
 import './Weekends.css'
 
 const PROGRAMS = [
-  // {
-  //   id: 'jazz',
-  //   poster: '/assets/posters/jazz-visuals.jpg',
-  //   posterAlt: 'Jazz & Visualz',
-  //   ticketUrl: 'https://tickchak.co.il/105310',
-  // },
   {
     id: 'twinpeaks',
-    poster: '/assets/posters/twin-peaks.jpg',
+    poster: '/assets/posters/twin-peaks-2.jpg',
     posterAlt: 'מועדון צפייה | Twin Peaks',
+  },
+  {
+    id: 'jazz',
+    poster: '/assets/posters/jazz-reggae.jpg',
+    posterAlt: 'Jazz & Visualz | Jerusalem Reggae Groove',
   },
 ]
 
