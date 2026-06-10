@@ -8,15 +8,15 @@ import './Weekends.css'
 
 const PROGRAMS = [
   {
-    id: 'twinpeaks',
-    poster: '/assets/posters/twin-peaks-2.jpg',
-    posterAlt: 'מועדון צפייה | Twin Peaks',
-  },
-  {
     id: 'jazz',
     poster: '/assets/posters/jazz-reggae.jpg',
     posterAlt: 'Jazz & Visualz | Jerusalem Reggae Groove',
     ticketUrl: 'https://app.tickchak.co.il/e/106757/realtime',
+  },
+  {
+    id: 'twinpeaks',
+    poster: '/assets/posters/twin-peaks-2.jpg',
+    posterAlt: 'מועדון צפייה | Twin Peaks',
   },
 ]
 
