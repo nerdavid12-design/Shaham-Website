@@ -16,6 +16,7 @@ const PROGRAMS = [
     id: 'jazz',
     poster: '/assets/posters/jazz-reggae.jpg',
     posterAlt: 'Jazz & Visualz | Jerusalem Reggae Groove',
+    ticketUrl: 'https://app.tickchak.co.il/e/106757/realtime',
   },
 ]
 
