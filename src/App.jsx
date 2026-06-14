@@ -15,7 +15,6 @@ const navKeys = [
   { path: '/', key: 'nav.home' },
   { path: '/video', key: 'nav.video' },
   { path: '/now', key: 'nav.now' },
-  { path: '/events', key: 'nav.events' },
   { path: '/weekends', key: 'nav.weekends' },
   { path: '/nails', key: 'nav.nails' },
 ]
