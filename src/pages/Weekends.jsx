@@ -22,6 +22,11 @@ function Weekends() {
   const pageRef = useSplitTextAnimation([media.length])
 
   useEffect(() => {
+    document.title = 'JAZZ & VISUALS'
+    return () => { document.title = 'שחם מעבדת תרבות' }
+  }, [])
+
+  useEffect(() => {
     fetchWeekends().then(setMedia)
   }, [])
 
