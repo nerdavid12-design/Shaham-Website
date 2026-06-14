@@ -13,11 +13,6 @@ const PROGRAMS = [
     posterAlt: 'Jazz & Visualz | Jerusalem Reggae Groove',
     ticketUrl: 'https://tickchak.co.il/106757',
   },
-  {
-    id: 'twinpeaks',
-    poster: '/assets/posters/twin-peaks-2.jpg',
-    posterAlt: 'מועדון צפייה | Twin Peaks',
-  },
 ]
 
 function Weekends() {
