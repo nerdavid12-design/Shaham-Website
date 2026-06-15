@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Home from './pages/Home'
@@ -25,6 +25,10 @@ function App() {
   const location = useLocation()
   const { lang, setLang, t, dir } = useLang()
   const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    document.title = location.pathname === '/weekends' ? 'JAZZ & VISUALS' : 'שחם מעבדת תרבות'
+  }, [location.pathname])
 
   return (
     <div className="app" dir={dir}>

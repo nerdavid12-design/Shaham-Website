@@ -44,7 +44,7 @@ const translations = {
     // Events
     'nav.events': 'אירועים',
     'nav.nails': 'NAILS',
-    'nav.weekends': 'סופי שבוע בשחם',
+    'nav.weekends': 'JAZZ & VISUALS',
     'weekends.tickets': 'לרכישת כרטיסים',
     'weekends.subtitle': 'מפגשי מוזיקה וויז׳ואל בשחם מעבדת תרבות',
     'weekends.gallery': 'מהמפגשים הקודמים',
@@ -112,7 +112,7 @@ const translations = {
     // Events
     'nav.events': 'Events',
     'nav.nails': 'NAILS',
-    'nav.weekends': 'Shaham Weekends',
+    'nav.weekends': 'JAZZ & VISUALS',
     'weekends.tickets': 'Buy Tickets',
     'weekends.subtitle': 'Music & Visuals at Shaham Culture Lab',
     'weekends.gallery': 'From Past Events',
@@ -180,7 +180,7 @@ const translations = {
     // Events
     'nav.events': 'فعاليات',
     'nav.nails': 'NAILS',
-    'nav.weekends': 'عطل نهاية الأسبوع في شحام',
+    'nav.weekends': 'JAZZ & VISUALS',
     'weekends.subtitle': 'موسيقى وفيجوال في شحام مختبر ثقافة',
     'weekends.gallery': 'من الفعاليات السابقة',
     'events.title': 'فعاليات',
