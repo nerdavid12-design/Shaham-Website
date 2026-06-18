@@ -13,6 +13,12 @@ const PROGRAMS = [
     posterAlt: 'Jazz & Visualz | Jerusalem Reggae Groove',
     ticketUrl: 'https://tickchak.co.il/106757',
   },
+  {
+    id: 'jazz-visuals',
+    poster: '/assets/posters/jazz-visuals.jpg',
+    posterAlt: 'Jazz & Visualz | חמישיית עוז יחיאלי',
+    ticketUrl: 'https://tickchak.co.il/107572',
+  },
 ]
 
 function Weekends() {
