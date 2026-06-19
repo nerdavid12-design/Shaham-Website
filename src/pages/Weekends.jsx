@@ -8,12 +8,6 @@ import './Weekends.css'
 
 const PROGRAMS = [
   {
-    id: 'jazz',
-    poster: '/assets/posters/jazz-reggae.jpg',
-    posterAlt: 'Jazz & Visualz | Jerusalem Reggae Groove',
-    ticketUrl: 'https://tickchak.co.il/106757',
-  },
-  {
     id: 'jazz-visuals',
     poster: '/assets/posters/jazz-oz-yechiali.jpg',
     posterAlt: 'Jazz & Visualz | חמישיית עוז יחיאלי',
