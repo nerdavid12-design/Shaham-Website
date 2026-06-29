@@ -9,8 +9,8 @@ import './Weekends.css'
 const PROGRAMS = [
   {
     id: 'jazz-visuals',
-    poster: '/assets/posters/jazz-oz-yechiali.jpg',
-    posterAlt: 'Jazz & Visualz | חמישיית עוז יחיאלי',
+    poster: '/assets/posters/jazz-almakias.jpg',
+    posterAlt: 'Jazz & Visualz | שלישיית משה אלמכיאס',
     ticketUrl: 'https://app.tickchak.co.il/e/108252/realtime',
   },
 ]
