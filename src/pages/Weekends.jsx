@@ -11,7 +11,7 @@ const PROGRAMS = [
     id: 'jazz-visuals',
     poster: '/assets/posters/jazz-oz-yechiali.jpg',
     posterAlt: 'Jazz & Visualz | חמישיית עוז יחיאלי',
-    ticketUrl: 'https://tickchak.co.il/107572',
+    ticketUrl: 'https://app.tickchak.co.il/e/108252/realtime',
   },
 ]
 
