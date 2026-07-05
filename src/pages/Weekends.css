@@ -48,6 +48,15 @@
   gap: 1.5rem;
 }
 
+/* Signup button tinted to match the poster's deep red */
+.wknd-jazz-visuals .event-signup-btn {
+  background: #8a1f2a;
+}
+
+.wknd-jazz-visuals .event-signup-btn:hover {
+  background: #6b1620;
+}
+
 .wknd-desc {
   font-size: 1rem;
   font-weight: 300;
