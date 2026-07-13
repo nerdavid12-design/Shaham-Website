@@ -9,9 +9,9 @@ import './Weekends.css'
 const PROGRAMS = [
   {
     id: 'jazz-visuals',
-    poster: '/assets/posters/jazz-drabkin.jpg',
-    posterAlt: 'Jazz & Visualz | יובל דרבקין קוורטט',
-    ticketUrl: 'https://tickchak.co.il/109060',
+    poster: '/assets/posters/jazz-ora-kevodi.jpg',
+    posterAlt: 'Jazz & Visualz | עורה כבודי',
+    ticketUrl: 'https://tickchak.co.il/106926',
   },
 ]
 
