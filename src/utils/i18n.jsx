@@ -181,6 +181,7 @@ const translations = {
     'nav.events': 'فعاليات',
     'nav.nails': 'NAILS',
     'nav.weekends': 'JAZZ & VISUALS',
+    'weekends.tickets': 'شراء التذاكر',
     'weekends.subtitle': 'موسيقى وفيجوال في شحام مختبر ثقافة',
     'weekends.gallery': 'من الفعاليات السابقة',
     'events.title': 'فعاليات',
