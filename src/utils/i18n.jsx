@@ -84,8 +84,8 @@ const translations = {
 
     // Video
     'video.subtitle': 'An annual program geared towards screening video art and experimental cinema on a street-facing screen. The works invite pedestrians for a nightly urban encounter with the creations of young video artists, aiming to promote new voices within the local Jerusalem video scene.',
-    'video.heading': 'Vid.Shaham | Curated by Sharon Balban',
-    'video.curated': '| Curated by Sharon Balban',
+    'video.heading': 'Vid.Shaham | Curated by Sharon Balaban',
+    'video.curated': '| Curated by Sharon Balaban',
     'video.empty': 'Videos coming soon',
     'video.now': 'Now Showing',
     'video.about_artist': 'About the Artist',
@@ -145,15 +145,15 @@ const translations = {
     'nav.now': 'الآن في "شحام"',
 
     // Home
-    'home.tagline': 'حيز قدسي للفن التجريبي',
+    'home.tagline': 'فضاء مقدسي للفن التجريبي',
     'home.gallery.title': 'من المشاريع والفعاليات',
     'home.gallery.heading': 'مشاريع في الماضي والحاضر',
     'home.gallery.empty': 'ستُضاف صور من المشاريع والفعاليات قريباً',
 
     // Video
-    'video.subtitle': 'برنامج سنوي لعرض فن الفيديو والسينما التجريبية على شاشة تطل على الشارع في مختبر "شحام" الثقافي. تدعو الأعمال إلى لقاء مدني ليلي مع إبداعات فناني وفنانات فيديو شباب، انطلاقاً من الرغبة في تعزيز أصوات جديدة في مشهد الفيديو في القدس.',
-    'video.heading': 'فيديو شحام | من تقييم شارون بلبان',
-    'video.curated': '| من تقييم شارون بلبان',
+    'video.subtitle': 'برنامج سنوي لعرض فن الفيديو والسينما التجريبية على شاشة تطل على الشارع في مختبر "شحام" الثقافي. تدعو الأعمال إلى لقاء حضري ليلي مع إبداعات فناني وفنانات فيديو شباب، انطلاقاً من الرغبة في تعزيز أصوات جديدة في مشهد الفيديو في القدس.',
+    'video.heading': 'فيديو شحام | بتقييم شارون بالابان',
+    'video.curated': '| بتقييم شارون بالابان',
     'video.empty': 'ستُضاف مقاطع فيديو قريباً',
     'video.now': 'الآن',
     'video.about_artist': 'عن الفنان',
@@ -166,7 +166,7 @@ const translations = {
     'about.title': 'حول',
     'about.heading': 'مركز شحام: مختبر ثقافة',
     'about.vision': 'رؤية',
-    'about.vision.text': 'القدس مدينة فريدة من نوعها، ليس فقط بسبب تعقيدها الثقافي، بل بفضله. تنشأ تناقضات عديدة من هذا التباين، ولكن يمكن تعريف هذه التناقضات كنقاط التقاء رائعة. كثيراً ما يقال إن المدينة تعكس تنوع الدولة وتشكل حافزاً لإسرائيل ككل. يوجد في المدينة حوالي 11 مؤسسة أكاديمية في مجال الفنون، وهي من الرواد في البلاد. لذلك، لا تقف القدس كمكان يحمل تقاليد قديمة فحسب، بل أيضاً كحيز مكثف يطلب من سكانه مواجهة التحديات باستمرار. يسعى مركزنا ليكون بمثابة مختبر داخلي تُجرى فيه هذه التجارب.',
+    'about.vision.text': 'القدس مدينة فريدة من نوعها، ليس فقط بسبب تعقيدها الثقافي، بل بفضله. تنشأ تناقضات عديدة من هذا التباين، ولكن يمكن تعريف هذه التناقضات كنقاط التقاء رائعة. كثيراً ما يقال إن المدينة تعكس تنوع الدولة وتشكل حافزاً لإسرائيل ككل. يوجد في المدينة حوالي 11 مؤسسة أكاديمية في مجال الفنون، وهي من بين المؤسسات الرائدة في البلاد. لذلك، لا تقف القدس كمكان يحمل تقاليد قديمة فحسب، بل أيضاً كحيز مكثف يطلب من سكانه مواجهة التحديات باستمرار. يسعى مركزنا ليكون بمثابة مختبر داخلي تُجرى فيه هذه التجارب.',
     'about.core': 'المهام الأساسية',
     'about.associated': 'المهام المرتبطة',
 
@@ -174,18 +174,18 @@ const translations = {
     'now.title': 'الآن في "شحام"',
     'now.empty.title': 'قريباً',
     'now.empty.text': 'ستُضاف تفاصيل المشروع الحالي قريباً.',
-    'now.hagar.title': 'هاجر: حاملة الحجارة | أنا كوتشريافي',
-    'now.hagar.description': 'مختبر بحث وتطوير متعدد المجالات يستكشف النفي والذاكرة والحيز المقدس من خلال قصة هاجر. في جوهره، يتساءل المشروع: كيف يشكل الحيز تجربة الصدمة والذاكرة والشوق؟',
+    'now.hagar.title': 'هاجر: حاملة الحجارة | آنا كوتشريافي',
+    'now.hagar.description': 'مختبر بحث وتطوير متعدد المجالات يستكشف المنفى والذاكرة والحيز المقدس من خلال قصة هاجر. في جوهره، يتساءل المشروع: كيف يشكل الحيز تجربة الصدمة والذاكرة والشوق؟',
 
     // Events
     'nav.events': 'فعاليات',
     'nav.nails': 'NAILS',
     'nav.weekends': 'JAZZ & VISUALS',
     'weekends.tickets': 'شراء التذاكر',
-    'weekends.subtitle': 'موسيقى وفيجوال في شحام مختبر ثقافة',
+    'weekends.subtitle': 'لقاءات موسيقى وفيجوال في شحام مختبر ثقافة',
     'weekends.gallery': 'من الفعاليات السابقة',
     'events.title': 'فعاليات',
-    'events.signup': 'التسجيل',
+    'events.signup': 'التسجيل للفعالية',
     'events.signup.success': 'تم التسجيل بنجاح!',
     'events.signup.error': 'فشل التسجيل، يرجى المحاولة مرة أخرى.',
     'events.signup.sending': 'جارٍ الإرسال...',
@@ -200,7 +200,7 @@ const translations = {
     'events.past': 'فعاليات سابقة',
 
     // Common
-    'loading': 'جاري التحميل...',
+    'loading': 'جارٍ التحميل...',
 
     // Footer
     'footer.text': 'شحام مختبر ثقافة',
