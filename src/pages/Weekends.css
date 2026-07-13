@@ -48,13 +48,13 @@
   gap: 1.5rem;
 }
 
-/* Signup button tinted to match the poster's deep red */
+/* Signup button tinted to match the poster's deep teal-green */
 .wknd-jazz-visuals .event-signup-btn {
-  background: #8a1f2a;
+  background: #1b7d68;
 }
 
 .wknd-jazz-visuals .event-signup-btn:hover {
-  background: #6b1620;
+  background: #145c4d;
 }
 
 .wknd-desc {
