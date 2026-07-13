@@ -19,7 +19,7 @@ const navKeys = [
   { path: '/nails', key: 'nav.nails' },
 ]
 
-const langs = ['he', 'en']
+const langs = ['he', 'en', 'ar']
 
 function App() {
   const location = useLocation()
@@ -27,11 +27,11 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    document.title = location.pathname === '/weekends' ? 'JAZZ & VISUALS' : 'שחם מעבדת תרבות'
-  }, [location.pathname])
+    document.title = location.pathname === '/weekends' ? t('nav.weekends') : t('footer.text')
+  }, [location.pathname, lang])
 
   return (
-    <div className="app" dir={dir}>
+    <div className="app" dir={dir} lang={lang}>
       <header className="header">
         <div className="header-inner">
           <NavLink to="/" className="logo-link" onClick={() => setMenuOpen(false)}>
