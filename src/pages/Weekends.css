@@ -37,26 +37,6 @@
   display: block;
 }
 
-/* Text below poster */
-.wknd-text {
-  width: 100%;
-  max-width: 360px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1.5rem;
-}
-
-/* Signup button tinted to match the poster's deep teal-green */
-.wknd-jazz-visuals .event-signup-btn {
-  background: #1b7d68;
-}
-
-.wknd-jazz-visuals .event-signup-btn:hover {
-  background: #145c4d;
-}
-
 .wknd-desc {
   font-size: 1rem;
   font-weight: 300;
