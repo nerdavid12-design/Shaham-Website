@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { fetchWeekends } from '../utils/sheets'
 import { useLang } from '../utils/i18n'
 import PageTransition from '../components/PageTransition'
-import SignupForm from '../components/SignupForm'
 import useSplitTextAnimation from '../hooks/useSplitTextAnimation'
 import './Weekends.css'
 
@@ -11,14 +10,12 @@ const PROGRAMS = [
     id: 'jazz-visuals',
     poster: '/assets/posters/jazz-ora-kevodi.jpg',
     posterAlt: 'Jazz & Visualz | עורה כבודי',
-    ticketUrl: 'https://tickchak.co.il/106926',
   },
 ]
 
 function Weekends() {
   const { t } = useLang()
   const [media, setMedia] = useState([])
-  const [activeSignup, setActiveSignup] = useState(null)
   const pageRef = useSplitTextAnimation([media.length])
 
   useEffect(() => {
@@ -38,31 +35,6 @@ function Weekends() {
                   alt={program.posterAlt}
                   className="wknd-poster"
                 />
-              </div>
-              <div className="wknd-text">
-                {program.ticketUrl ? (
-                  <a
-                    href={program.ticketUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="event-signup-btn"
-                  >
-                    {t('weekends.tickets')}
-                  </a>
-                ) : activeSignup === program.id ? (
-                  <SignupForm
-                    eventName={program.posterAlt}
-                    t={t}
-                    onClose={() => setActiveSignup(null)}
-                  />
-                ) : (
-                  <button
-                    className="event-signup-btn"
-                    onClick={() => setActiveSignup(program.id)}
-                  >
-                    {t('events.signup')}
-                  </button>
-                )}
               </div>
             </section>
           ))}
